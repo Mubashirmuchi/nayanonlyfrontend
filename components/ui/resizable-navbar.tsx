@@ -6,6 +6,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'framer-motion';
+import {   SidebarOpenIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -260,6 +261,27 @@ export const MobileNavMenu = ({
   );
 };
 
+// export const MobileNavToggle = ({
+//   isOpen,
+//   onClick,isVisible
+// }: {
+//   isOpen: boolean;
+//   onClick: () => void;
+//   isVisible: boolean
+// }) => {
+//   return isOpen ? (
+//     // <IconX className="text-black dark:text-white" onClick={onClick} />
+//     <span className="text-black dark:text-white" onClick={onClick}>
+//      <SidebarCloseIcon/>
+//     </span>
+//   ) : (
+//     // <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+//     <span className="text-black dark:text-white" onClick={onClick}>
+//       <SidebarOpenIcon/>
+//     </span>
+//   );
+// };
+
 export const MobileNavToggle = ({
   isOpen,
   onClick,
@@ -267,22 +289,22 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return isOpen ? (
-    // <IconX className="text-black dark:text-white" onClick={onClick} />
-    <span className="text-black dark:text-white" onClick={onClick}>
-      IconX
-    </span>
-  ) : (
-    // <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
-    <span className="text-black dark:text-white" onClick={onClick}>
-      IconMenu2
+  const isVisible = useContext(NavbarVisibilityContext);
+  const Icon = isOpen ? X : SidebarOpenIcon;
+  const iconColor = isVisible ? "text-black" : "text-white";
+
+  return (
+    <span className={iconColor} onClick={onClick}>
+      <Icon className={iconColor} />
+
     </span>
   );
 };
 
+
 export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
-  const contextVisible = useContext(NavbarVisibilityContext);
-  const visible = isVisible ?? contextVisible;
+  // const contextVisible = useContext(NavbarVisibilityContext);
+  // const visible = isVisible ?? contextVisible;
   return (
     <Link
       href="/"

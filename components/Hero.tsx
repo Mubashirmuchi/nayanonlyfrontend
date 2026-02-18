@@ -34,7 +34,7 @@ import { useTranslations } from 'next-intl';
 
 export default function Hero() {
   const t = useTranslations('homePage.hero');
-  const videoUrl = "https://res.cloudinary.com/du8hedlvt/video/upload/v1769080532/0914_dlisnj.mov"
+  const videoUrl = "https://res.cloudinary.com/du8hedlvt/video/upload/v1771428053/0914_dlisnj_3__1_notci8.mp4"
   const imgUrl = "https://res.cloudinary.com/du8hedlvt/image/upload/v1771413108/hero_i2p0mh.png"
 
   return (

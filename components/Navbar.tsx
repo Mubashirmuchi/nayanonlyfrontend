@@ -11,7 +11,7 @@ import {
   MobileNavMenu,
 } from '@/components/ui/resizable-navbar';
 import { useState } from 'react';
-import { Link, usePathname } from '@/i18n/navigation';
+import { Link } from '@/i18n/navigation';
 import LanguageDropdown from '@/components/studio';
 import { useTranslations } from 'next-intl';
 import PrimaryButton from './PrimaryButton';
@@ -19,7 +19,6 @@ import { Globe } from 'lucide-react';
 
 export function NavbarComponent({ locale }: { locale: string }) {
   const t = useTranslations('global.navbar');
-  const pathname = usePathname();
 
   const navItems = [
     {
@@ -51,10 +50,9 @@ export function NavbarComponent({ locale }: { locale: string }) {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isContactPage = pathname === '/contact';
 
   return (
-    <Navbar forceVisible={isContactPage}>
+    <Navbar>
       {/* Desktop Navigation */}
       <NavBody>
         <NavbarLogo />
@@ -77,6 +75,8 @@ export function NavbarComponent({ locale }: { locale: string }) {
         <MobileNavHeader>
           <NavbarLogo />
           <MobileNavToggle
+
+          
             isOpen={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           />
@@ -96,7 +96,7 @@ export function NavbarComponent({ locale }: { locale: string }) {
               <span className="block">{item.name}</span>
             </Link>
           ))}
-          <div className="flex w-full flex-col gap-4">
+          {/* <div className="flex w-full flex-col gap-4">
             <NavbarButton
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
@@ -111,7 +111,7 @@ export function NavbarComponent({ locale }: { locale: string }) {
             >
               Book a call
             </NavbarButton>
-          </div>
+          </div> */}
         </MobileNavMenu>
       </MobileNav>
     </Navbar>
