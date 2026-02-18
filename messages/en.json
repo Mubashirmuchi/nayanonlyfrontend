@@ -5,45 +5,45 @@
       "about": "About Us",
       "contact": "Projects",
       "blogs": "Blogs",
-      "services":"Services",
-      "consultation":"Consultation"
+      "services": "Services",
+      "consultation": "Consultation"
     },
     "footer": {
-      "tagline": "Every Home Has A Story.We Help You Write Yours.",
+      "tagline1": "Every Home Has A Story.",
+      "tagline2": "We Help You Write Yours.",
       "subscribe": "Subscribe to our Newsletter",
       "email-placeholder": "Email address",
-      "browsenayan":{
-        "title":"Browse Nayan",
-        "for-rent":"For Rent",
-        "office":"Office",
-        "apartments":"Apartments",
-        "villa":"Villa"
-      }  ,
-      "workatnayan":{
-         "title":"Work At Nayan",
-        "agent":"Become a real estate agent",
-        "photographer":"Be a Nayan Photographer"
+      "browsenayan": {
+        "title": "Browse Nayan",
+        "for-rent": "For Rent",
+        "office": "Office",
+        "apartments": "Apartments",
+        "villa": "Villa"
       },
-      "usefullinks":{
-        "title":"Useful Links",
-        "home":"Home",
-        "about":"About Us",
-        "services":"Services",
-        "blogs":"Blogs and Insights",
-        "faq":"FAQ",
-        "email":"Email",
-        "phone":"Phone",
-        "copyright":"© 2026. All Rights Reserved."
-      }
+      "workatnayan": {
+        "title": "Work At Nayan",
+        "agent": "Become a real estate agent",
+        "photographer": "Be a Nayan Photographer"
+      },
+      "usefullinks": {
+        "title": "Useful Links",
+        "home": "Home",
+        "about": "About Us",
+        "services": "Services",
+        "blogs": "Blogs and Insights",
+        "faq": "FAQ",
+        "email": "Email",
+        "phone": "Phone",
+        "copyright": "© 2026. All Rights Reserved."
+      },
+      "whatsappMessage": "Hello, I would like to know more about your projects."
 
     }
   },
   "homePage": {
     "hero": {
-      "title":"Timeless developments crafted for refined modern living.",
-      "cta":"Explore Projects"
+      "title": "Timeless developments crafted for refined modern living.",
+      "cta": "Explore Projects"
     }
   }
 }
-
-

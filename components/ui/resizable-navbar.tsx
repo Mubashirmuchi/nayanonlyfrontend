@@ -9,11 +9,14 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, createContext, useContext } from 'react';
+
+const NavbarVisibilityContext = createContext<boolean>(false);
 
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
+  forceVisible?: boolean;
 }
 
 interface NavBodyProps {
@@ -52,7 +55,7 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
-export const Navbar = ({ children, className }: NavbarProps) => {
+export const Navbar = ({ children, className, forceVisible }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
     target: ref,
@@ -68,20 +71,24 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     }
   });
 
+  const isVisible = forceVisible || visible;
+
   return (
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn('fixed inset-x-0 top-6 z-40 w-full ', className)}
     >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible }
-            )
-          : child
-      )}
+      <NavbarVisibilityContext.Provider value={isVisible}>
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child)
+            ? React.cloneElement(
+                child as React.ReactElement<{ visible?: boolean }>,
+                { visible: isVisible }
+              )
+            : child
+        )}
+      </NavbarVisibilityContext.Provider>
     </motion.div>
   );
 };
@@ -128,10 +135,10 @@ export const NavItems = ({
   items,
   className,
   locale,
-  isVisible,
   onItemClick,
 }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const isVisible = useContext(NavbarVisibilityContext);
   const filteredItems = items.filter(
     (item) => !(isVisible && item.hideWhenVisible)
   );
@@ -274,6 +281,8 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
+  const contextVisible = useContext(NavbarVisibilityContext);
+  const visible = isVisible ?? contextVisible;
   return (
     <Link
       href="/"
@@ -308,14 +317,16 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<'a'>
   | React.ComponentPropsWithoutRef<'button'>
 )) => {
+  const isVisible = useContext(NavbarVisibilityContext);
+  
   const baseStyles =
-    'px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center';
+    'px-4 py-2 rounded-md button text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center';
 
   const variantStyles = {
     primary:
-      'shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]',
-    secondary: 'bg-transparent shadow-none dark:text-white',
-    dark: 'bg-black text-white shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]',
+      `${isVisible ? 'bg-white text-black' : 'bg-transparent text-white border border-white'} shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]`,
+    secondary: `bg-transparent shadow-none ${isVisible ? 'text-black' : 'text-white'} dark:text-white`,
+    dark: `${isVisible ? 'bg-black text-white' : 'bg-white text-black'} shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]`,
     gradient:
       'bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]',
   };

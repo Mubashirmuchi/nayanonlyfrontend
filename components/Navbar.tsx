@@ -11,14 +11,15 @@ import {
   MobileNavMenu,
 } from '@/components/ui/resizable-navbar';
 import { useState } from 'react';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import LanguageDropdown from '@/components/studio';
 import { useTranslations } from 'next-intl';
 import PrimaryButton from './PrimaryButton';
-import { IconChevronDown, IconSquareRoundedChevronDown } from '@tabler/icons-react';
+import { Globe } from 'lucide-react';
 
 export function NavbarComponent({ locale }: { locale: string }) {
   const t = useTranslations('global.navbar');
+  const pathname = usePathname();
 
   const navItems = [
     {
@@ -50,9 +51,10 @@ export function NavbarComponent({ locale }: { locale: string }) {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isContactPage = pathname === '/contact';
 
   return (
-    <Navbar>
+    <Navbar forceVisible={isContactPage}>
       {/* Desktop Navigation */}
       <NavBody>
         <NavbarLogo />
@@ -63,10 +65,10 @@ export function NavbarComponent({ locale }: { locale: string }) {
             defaultOpen={false}
             trigger={
                 
-                <NavbarButton className='capitalize flex ' variant="secondary">{locale}<IconChevronDown size={20}/></NavbarButton>}
+                <NavbarButton className='capitalize flex gap-1' variant="secondary"><Globe size={20}/>{locale}</NavbarButton>}
           />
 
-          <PrimaryButton text={t('consultation')} />
+          <PrimaryButton href='/contact' text={t('consultation')} />
         </div>
       </NavBody>
 
