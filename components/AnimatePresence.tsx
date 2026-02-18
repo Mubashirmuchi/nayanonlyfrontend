@@ -4,15 +4,17 @@ import React from 'react';
 
 export default function AnimatePresence({
   children,
+  itemKey,
 }: {
   children: React.ReactNode;
+  itemKey?: string;
 }) {
   return (
     <_AnimatePresence
       mode="wait"
       onExitComplete={() => console.log('Animation Finished')}
     >
-      {children}
+      <div key={itemKey}>{children}</div>
     </_AnimatePresence>
   );
 }
