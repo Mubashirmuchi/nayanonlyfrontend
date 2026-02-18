@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import { PageWrapper } from '@/components/PageWrapper';
 import ServicesBlock from '@/components/Services';
 import TestimonialsSwiper from '@/components/Testimonials';
+import WhyChooseUS from '@/components/WhyChooseUs';
 
 export default async function Home() {
   return (
@@ -11,6 +12,7 @@ export default async function Home() {
       <Hero />
       <About />
       <ServicesBlock />
+      <WhyChooseUS />
       <TestimonialsSwiper />
       <ConnectUs />
     </PageWrapper>

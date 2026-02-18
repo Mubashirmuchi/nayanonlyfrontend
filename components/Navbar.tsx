@@ -11,14 +11,16 @@ import {
   MobileNavMenu,
 } from '@/components/ui/resizable-navbar';
 import { useState } from 'react';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import LanguageDropdown from '@/components/studio';
 import { useTranslations } from 'next-intl';
 import PrimaryButton from './PrimaryButton';
 import { Globe } from 'lucide-react';
 
 export function NavbarComponent({ locale }: { locale: string }) {
-  const t = useTranslations('global.navbar');
+const pathname = usePathname(); 
+ const t = useTranslations('global.navbar');
+  const isContactPage = pathname === '/contact';
 
   const navItems = [
     {
@@ -52,7 +54,8 @@ export function NavbarComponent({ locale }: { locale: string }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar>
+    // <Navbar>
+    <Navbar forceVisible={isContactPage}>
       {/* Desktop Navigation */}
       <NavBody>
         <NavbarLogo />

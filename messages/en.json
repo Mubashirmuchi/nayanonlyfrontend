@@ -78,48 +78,70 @@
         }
       ]
     },
+    "whyChooseUS": {
+      "label": "WHY CHOOSE US",
+      "title": "Our Competitive Edge",
+      "description": "Our competitive edge is built on experience, local market knowledge, and a disciplined approach to real estate development, ensuring consistent quality and long-term value across every project.",
+      "items": [
+        {
+          "title": "20+ Years of Experience",
+          "description": "Over two decades of hands-on expertise in the real estate market."
+        },
+        {
+          "title": "Specialized Team",
+          "description": " Local market knowledge combined with a global development perspective."
+        },
+        {
+          "title": "Strategic Partnerships",
+          "description": "Strong relationships with leading suppliers and contractors."
+        },
+        {
+          "title": "Quality & Innovation",
+          "description": "Consistent commitment to high standards across every project stage."
+        },
+        {
+          "title": "International Client Support",
+          "description": "End-to-end assistance with approvals and formal procedures."
+        },
+        {
+          "title": "Seamless Financial Processes",
+          "description": " Simplified banking and financial procedures for Saudi clients."
+        }
+      ]
+    },
     "testimonial": {
+      "label": "TESTIMONIALS",
+      "title": {
+        "main1": "Experiences",
+        "highlight1": "Shared",
+        "highlight2": "by",
+        "main2": "Our Clients"
+      },
 
-
-
-
-
-  "label": "TESTIMONIALS",
-  "title": {
-    "main1": "Experiences",
-    "highlight1": "Shared",
-    "highlight2": "by",
-    "main2": "Our Clients"
-  }
-
-
-
-      ,
-      
       "testimonials": [
         {
           "authorName": "Rayan Ahmed",
           "authorRole": "Verified Client",
-          "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437289/testimonial1_gzaunc.png",
+          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437289/testimonial1_gzaunc.png",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Khalid",
           "authorRole": "Consultant",
-                    "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
+          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
 
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Abu Hassan",
           "authorRole": "Client",
-          "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437478/testimonial4_wvc3dr.png",
+          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437478/testimonial4_wvc3dr.png",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Ameer",
           "authorRole": "Verified Client",
-          "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
+          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         }
       ]

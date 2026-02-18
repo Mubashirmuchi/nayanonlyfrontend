@@ -1,11 +1,12 @@
-import React from 'react'
+import ContactSection from '@/components/ContactPage';
+import { PageWrapper } from '@/components/PageWrapper';
 
-const Contact = () => {
+const ContactPage = () => {
   return (
-    <div className='h-screen flex justify-center items-center'>
-      Contact page
-    </div>
-  )
-}
+    <PageWrapper>
+      <ContactSection />
+    </PageWrapper>
+  );
+};
 
-export default Contact
+export default ContactPage;
