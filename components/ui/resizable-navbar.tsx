@@ -26,6 +26,7 @@ interface NavItemsProps {
   items: {
     name: string;
     link: string;
+    hideWhenVisible?: boolean;
   }[];
   className?: string;
   locale: string;
@@ -93,7 +94,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? '0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset'
           : 'none',
-        width: visible ? '40%' : '100%',
+        width: visible ? '70%' : '100%',
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -111,7 +112,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       )}
     >
       {React.Children.map(children, (child) =>
-        React.isValidElement(child) && (child.type === NavbarLogo || child.type === NavItems)
+        React.isValidElement(child) &&
+        (child.type === NavbarLogo || child.type === NavItems)
           ? React.cloneElement(
               child as React.ReactElement<{ isVisible?: boolean }>,
               { isVisible: visible }
@@ -130,6 +132,9 @@ export const NavItems = ({
   onItemClick,
 }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const filteredItems = items.filter(
+    (item) => !(isVisible && item.hideWhenVisible)
+  );
 
   return (
     <motion.div
@@ -139,18 +144,20 @@ export const NavItems = ({
         className
       )}
     >
-      {items.map((item, idx) => (
+      {filteredItems.map((item, idx) => (
         <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className={`relative px-4 py-2 ${isVisible ? 'text-black' : 'text-white'}  dark:text-neutral-300`}
+          //   className={`relative px-4 py-2 ${isVisible  ? 'text-black' : 'text-white'}  dark:text-neutral-300`}
+          className={`relative px-4 py-2 ${hovered === idx ? 'text-black dark:text-white' : isVisible ? 'text-black' : 'text-white'} dark:text-neutral-300`}
+          
           key={`link-${idx}`}
           href={`/${locale}/${item.link}`}
         >
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="absolute inset-0 h-full w-full text-black rounded-full bg-gray-100 dark:bg-neutral-800"
             />
           )}
           <span className="relative z-20">{item.name}</span>
@@ -267,21 +274,19 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
- 
   return (
     <Link
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image
-        src={isVisible ? "/logoblack.png": "/logowhite.png" }
+        src={isVisible ? '/logoblack.png' : '/logowhite.png'}
         alt="logo"
         width={200}
         height={50}
         className="h-8 md:h-10 lg:h-12 w-auto"
         priority
       />
-     
     </Link>
   );
 };

@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import BackgroundVideo from '@/components/HeroVideo';
 import PrimaryButton from './PrimaryButton';
+import { useTranslations } from 'next-intl';
 
 // interface Button {
 //   id: string;
@@ -33,6 +33,7 @@ import PrimaryButton from './PrimaryButton';
 // { data }: HeroProps
 
 export default function Hero() {
+  const t = useTranslations('homePage.hero');
   const videoUrl = "https://res.cloudinary.com/du8hedlvt/video/upload/v1769080532/0914_dlisnj.mov"
   const imgUrl = "https://res.cloudinary.com/du8hedlvt/image/upload/v1771413108/hero_i2p0mh.png"
 
@@ -59,18 +60,31 @@ export default function Hero() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 -z-10" />
-      <div
-        className="absolute z-10 
-                left-1/2 -translate-x-1/2 bottom-8 
-                lg:left-10 lg:translate-x-0 lg:bottom-16 w-full px-4"
-      >
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-sm text-white text-center lg:text-left">
-          <p className="text-lg font-medium mb-4">{""}</p>
+      <div className="absolute inset-0 bg-black/40 -z-10" /> 
 
-       <PrimaryButton />
-        </div>
-      </div>
+      <div
+  className="
+    absolute z-10
+    bottom-6
+    left-4
+    right-4
+    md:bottom-10
+    lg:left-10
+    lg:right-auto
+    lg:bottom-16
+    rtl:lg:left-auto
+    rtl:lg:right-10
+  "
+>
+  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6 max-w-sm text-white text-center lg:text-left rtl:lg:text-right">
+    <p className="text-base md:text-lg font-medium mb-4">
+      {t('title')}
+    </p>
+
+    <PrimaryButton href="/" text={t('cta')} />
+  </div>
+</div>
+
     </section>
   );
 }

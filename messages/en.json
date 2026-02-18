@@ -38,7 +38,7 @@
 
     }
   },
-  "HomePage": {
+  "homePage": {
     "hero": {
       "title":"Timeless developments crafted for refined modern living.",
       "cta":"Explore Projects"
