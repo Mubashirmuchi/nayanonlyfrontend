@@ -295,8 +295,7 @@ export const MobileNavToggle = ({
 
   return (
     <span className={iconColor} onClick={onClick}>
-      <Icon className={iconColor} />
-
+      <Icon className={iconColor}  size={30}/>
     </span>
   );
 };
@@ -315,7 +314,7 @@ export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
         alt="logo"
         width={200}
         height={50}
-        className="h-8 md:h-10 lg:h-12 w-auto"
+        className="h-10 md:h-10 lg:h-12 w-auto"
         priority
       />
     </Link>

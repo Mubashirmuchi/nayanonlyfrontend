@@ -74,12 +74,20 @@ export function NavbarComponent({ locale }: { locale: string }) {
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo />
+          <div className="flex justify-center items-center gap-4 ">
+             <LanguageDropdown
+             
+            defaultOpen={false}
+            trigger={
+                
+                <NavbarButton className='capitalize flex gap-1' variant="secondary"><Globe size={24}/>{locale}</NavbarButton>}
+          />
           <MobileNavToggle
 
           
             isOpen={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          />
+          /></div>
         </MobileNavHeader>
 
         <MobileNavMenu

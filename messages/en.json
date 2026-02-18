@@ -37,13 +37,98 @@
         "copyright": "© 2026. All Rights Reserved."
       },
       "whatsappMessage": "Hello, I would like to know more about your projects."
-
     }
   },
   "homePage": {
     "hero": {
       "title": "Timeless developments crafted for refined modern living.",
       "cta": "Explore Projects"
+    },
+    "about": {
+      "label": "WHO WE ARE",
+      "title": "About Nayan",
+      "description": "Nayan was established as a distinguished brand in the real estate sector, backed by over 20 years of expertise and innovation. The  company stands out for delivering premium projects that contribute to shaping a modern urban future aligned with Saudi Arabia’s  Vision 2030. Combining contemporary design and exceptional quality, Nayan is committed to meeting the needs of individuals and  investors with full transparency and professionalism.",
+      "cta": "Learn More About Us"
+    },
+    "service": {
+      "label": "WHAT WE DO",
+
+      "title": "Our Services",
+      "description": "Our services span the full real estate lifecycle, from development and execution to management and investment consulting.",
+      "services": [
+        {
+          "icon": "IconBuildingSkyscraper",
+          "title": "Development & Implementation",
+          "description": "Residential and commercial projects delivered with a focus on quality, efficiency, and long-term value."
+        },
+        {
+          "icon": "IconBriefcase",
+          "title": "Design & Build custom projects",
+          "description": "Custom real estate projects tailored to functional, architectural, and client requirements."
+        },
+        {
+          "icon": "IconSettingsPin",
+          "title": "Property Management & after-sales",
+          "description": "Property management and after-sales services for long-term asset care and value."
+        },
+        {
+          "icon": "IconFileLike",
+          "title": "Real estate investment consulting",
+          "description": "Strategic real estate investment consulting supported by market insight and feasibility analysis."
+        }
+      ]
+    },
+    "testimonial": {
+
+
+
+
+
+  "label": "TESTIMONIALS",
+  "title": {
+    "main1": "Experiences",
+    "highlight1": "Shared",
+    "highlight2": "by",
+    "main2": "Our Clients"
+  }
+
+
+
+      ,
+      
+      "testimonials": [
+        {
+          "authorName": "Rayan Ahmed",
+          "authorRole": "Verified Client",
+          "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437289/testimonial1_gzaunc.png",
+          "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
+        },
+        {
+          "authorName": "Khalid",
+          "authorRole": "Consultant",
+                    "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
+
+          "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
+        },
+        {
+          "authorName": "Abu Hassan",
+          "authorRole": "Client",
+          "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437478/testimonial4_wvc3dr.png",
+          "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
+        },
+        {
+          "authorName": "Ameer",
+          "authorRole": "Verified Client",
+          "image":"https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
+          "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
+        }
+      ]
+    },
+    "connect": {
+      "label": "Connect Us",
+      "title": "Ready to Find Your Dream Home with Nayan?",
+      "description": "Let us help you find a home that reflects your lifestyle, quality expectations, and long-term goals.",
+      "cta": "Get in Touch"
     }
   }
 }

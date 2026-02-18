@@ -46,7 +46,7 @@ export default function LanguageDropdown({
 
     return (
         <DropdownMenu defaultOpen={defaultOpen}>
-            <DropdownMenuTrigger asChild>{trigger}</DropdownMenuTrigger>
+            <DropdownMenuTrigger className='p-0' asChild>{trigger}</DropdownMenuTrigger>
 
             <DropdownMenuContent className="w-44" align={align || 'end'}>
                 <DropdownMenuRadioGroup

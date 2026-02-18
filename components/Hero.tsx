@@ -3,43 +3,15 @@ import BackgroundVideo from '@/components/HeroVideo';
 import PrimaryButton from './PrimaryButton';
 import { useTranslations } from 'next-intl';
 
-// interface Button {
-//   id: string;
-//   url: string;
-//   text: string;
-//   type: string;
-//   newTab: boolean;
-// }
-
-// interface Picture {
-//   url: string;
-//   name: string;
-//   alternativeText: string;
-//   width: number;
-//   height: number;
-// }
-
-// interface HeroProps {
-//   data: {
-//     id: string;
-//     title: string;
-//     description: string;
-//     picture: Picture;
-//     video: Picture;
-//     buttons: Button;
-//   };
-// }
-
-// { data }: HeroProps
-
 export default function Hero() {
   const t = useTranslations('homePage.hero');
-  const videoUrl = "https://res.cloudinary.com/du8hedlvt/video/upload/v1771428053/0914_dlisnj_3__1_notci8.mp4"
-  const imgUrl = "https://res.cloudinary.com/du8hedlvt/image/upload/v1771413108/hero_i2p0mh.png"
+  const videoUrl =
+    'https://res.cloudinary.com/du8hedlvt/video/upload/v1771428053/0914_dlisnj_3__1_notci8.mp4';
+  const imgUrl =
+    'https://res.cloudinary.com/du8hedlvt/image/upload/v1771413108/hero_i2p0mh.png';
 
   return (
     <section
-      // className="relative w-full min-h-screen flex items-center justify-center" id="home"
       className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden"
       id="home"
     >
@@ -60,10 +32,10 @@ export default function Hero() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 -z-10" /> 
+      <div className="absolute inset-0 bg-black/40 -z-10" />
 
       <div
-  className="
+        className="
     absolute z-10
     bottom-6
     left-4
@@ -75,16 +47,13 @@ export default function Hero() {
     rtl:lg:left-auto
     rtl:lg:right-10
   "
->
-  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6 max-w-sm text-white text-center lg:text-left rtl:lg:text-right">
-    <p className="text-base md:text-lg font-medium mb-4">
-      {t('title')}
-    </p>
+      >
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6 max-w-sm text-white text-center lg:text-left rtl:lg:text-right">
+          <p className="text-base md:text-lg font-medium mb-4">{t('title')}</p>
 
-    <PrimaryButton href="/" text={t('cta')} />
-  </div>
-</div>
-
+          <PrimaryButton href="/" text={t('cta')} />
+        </div>
+      </div>
     </section>
   );
 }
