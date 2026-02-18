@@ -13,19 +13,29 @@ import {
 import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import LanguageDropdown from '@/components/studio';
+import { useTranslations } from 'next-intl';
 
 export function NavbarComponent({ locale }: { locale: string }) {
+        const t = useTranslations('global.navbar');
+
     const navItems = [
         {
-            name: 'Blogs',
-            link: '/blogs',
+            name: t('home'),
+            link: '/',
         },
         {
-            name: 'Pathnames',
-            link: '/pathnames',
+              name: t('about'),
+            link: '/',
         },
         {
-            name: 'Contact',
+            name: t('contact'),
+            link: '/',
+        },
+        {
+              name: t('blogs'),
+               link: '/',
+        } ,{
+            name: t('services'),
             link: '/',
         },
     ];
