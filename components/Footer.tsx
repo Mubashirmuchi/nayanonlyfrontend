@@ -7,7 +7,9 @@ import {
   IconBrandLinkedin,
   IconBrandYoutube,
   IconBrandWhatsapp,
+  IconMapPin,
 } from '@tabler/icons-react';
+import MarqueeBlock from './Marquee';
 
 const Footer = () => {
   const t = useTranslations('global.footer');
@@ -39,11 +41,9 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       {/* Top scrolling bar */}
+
       <div className="bg-[#C08E46] text-white text-sm py-3 overflow-hidden whitespace-nowrap">
-        <div className="animate-marquee inline-block">
-          smart ✽ future ✽ scalable ✽ solutions ✽ Designs ✽ transformation ✽
-          Valuable ✽ Designs ✽ future ✽ solutions ✽
-        </div>
+        <MarqueeBlock />
       </div>
 
       {/* Main footer */}
@@ -145,6 +145,18 @@ const Footer = () => {
           >
             <IconBrandWhatsapp size={18} />
             +966 56 129 1512
+          </a>
+
+          <h4 className="font-semibold my-3">{t('headquarters')}</h4>
+
+          <a
+            href="https://maps.app.goo.gl/nh7h5ykDu9TPRgHH7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start gap-1 text-gray-400 text-sm mb-4 hover:text-white transition"
+          >
+            <IconMapPin size={18} className="mt-0.5 shrink-0" />
+            <span>{t('headquartersAddress')}</span>
           </a>
         </div>
       </div>

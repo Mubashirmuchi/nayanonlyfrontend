@@ -1,22 +1,20 @@
-
-import { ReactNode } from "react";
-
+import { ReactNode } from 'react';
 
 interface WrapperProps {
   children: ReactNode;
   className?: string;
-  size?: "default" | "wide" | "full";
+  size?: 'default' | 'wide' | 'full';
 }
 
 export default function Wrapper({
   children,
-  className = "",
-  size = "default",
+  className = '',
+  size = 'default',
 }: WrapperProps) {
   const sizes = {
-    default: "max-w-7xl",
-    wide: "max-w-[1440px]",
-    full: "max-w-full",
+    default: 'max-w-7xl',
+    wide: 'max-w-[1440px]',
+    full: 'max-w-full',
   };
 
   return (

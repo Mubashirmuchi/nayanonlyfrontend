@@ -1,201 +1,31 @@
-// 'use client';
-
-// import Image from 'next/image';
-// import { IconPhone, IconMail, IconMapPin, IconArrowUpRight } from '@tabler/icons-react';
-
-// export default function ContactSection() {
-    
-//     const imageUrl = "https://res.cloudinary.com/du8hedlvt/image/upload/v1771440343/contactpage_n284nq.png"
-  
-
-//     const handleSubmit = async (e: React.FormEvent) => {
-//   e.preventDefault();
-
-//   const formData = new FormData(e.currentTarget as HTMLFormElement);
-
-//   const data = {
-//     name: formData.get("name"),
-//     email: formData.get("email"),
-//     phone: formData.get("phone"),
-//     subject: formData.get("subject"),
-//     message: formData.get("message"),
-//   };
-
-//   const res = await fetch("/api/contact", {
-//     method: "POST",
-//     body: JSON.stringify(data),
-//   });
-
-//   const result = await res.json();
-
-//   if (result.success) {
-//     alert("Message sent successfully!");
-//   } else {
-//     alert("Something went wrong.");
-//   }
-// };
-
-  
-//     return (
-//     <section className="bg-[#EDE9E3] py-20 px-6">
-//       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
-
-//         {/* LEFT SIDE */}
-//         <div>
-//           <h2 className="text-4xl md:text-5xl font-semibold text-black leading-tight mb-6">
-//             Begin Your Journey <br /> with NAYAN
-//           </h2>
-
-//           <p className="text-gray-600 mb-10 max-w-md">
-//             Get in touch with us to learn more about our projects,
-//             discuss investment opportunities, or receive personalized
-//             support from our team.
-//           </p>
-
-//           {/* FORM */}
-//           <form className="space-y-6">
-
-//             <div className="grid sm:grid-cols-2 gap-6">
-//               <div>
-//                 <label className="text-sm text-gray-700 mb-2 block">
-//                   Name
-//                 </label>
-//                 <input
-//                   type="text"
-//                   placeholder="Your name..."
-//                   className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
-//                 />
-//               </div>
-
-//               <div>
-//                 <label className="text-sm text-gray-700 mb-2 block">
-//                   Email
-//                 </label>
-//                 <input
-//                   type="email"
-//                   placeholder="name@gmail.com"
-//                   className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
-//                 />
-//               </div>
-//             </div>
-
-//             <div className="grid sm:grid-cols-2 gap-6">
-//               <div>
-//                 <label className="text-sm text-gray-700 mb-2 block">
-//                   Phone Number
-//                 </label>
-//                 <input
-//                   type="text"
-//                   placeholder="+008 xxx xx"
-//                   className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
-//                 />
-//               </div>
-
-//               <div>
-//                 <label className="text-sm text-gray-700 mb-2 block">
-//                   Subject
-//                 </label>
-//                 <input
-//                   type="text"
-//                   placeholder="Subject"
-//                   className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
-//                 />
-//               </div>
-//             </div>
-
-//             <div>
-//               <label className="text-sm text-gray-700 mb-2 block">
-//                 Message
-//               </label>
-//               <textarea
-//                 rows={5}
-//                 placeholder="Type your message here..."
-//                 className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
-//               />
-//             </div>
-
-//             {/* CTA BUTTON */}
-//             <button
-//               type="submit"
-//               className="group relative inline-flex items-center gap-4 bg-[#C08E46] text-white px-6 py-3 rounded-full shadow-md hover:opacity-90 transition"
-//             >
-//               Send Message
-//               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white">
-//                 <IconArrowUpRight size={18} className="text-black" />
-//               </span>
-//             </button>
-
-//           </form>
-//         </div>
-
-//         {/* RIGHT SIDE */}
-//         <div>
-//           <div className="relative w-full h-[400px] mb-8">
-//             <Image
-//               src={imageUrl}// replace with your image
-//               alt="Interior"
-//               fill
-//               className="object-cover rounded-md"
-//             />
-//           </div>
-
-//           <div className="border-t border-gray-400 pt-6 grid sm:grid-cols-3 gap-6 text-sm text-gray-700">
-
-//             <div className="flex items-start gap-3">
-//               <IconPhone size={20} />
-//               <div>
-//                 <p className="font-medium">Phone</p>
-//                 <p>+1 123 567 88554</p>
-//               </div>
-//             </div>
-
-//             <div className="flex items-start gap-3">
-//               <IconMail size={20} />
-//               <div>
-//                 <p className="font-medium">Email</p>
-//                 <p>office@gmail.com</p>
-//               </div>
-//             </div>
-
-//             <div className="flex items-start gap-3">
-//               <IconMapPin size={20} />
-//               <div>
-//                 <p className="font-medium">Visit Us</p>
-//                 <p>Office: Riyadh, Saudi Arabia</p>
-//               </div>
-//             </div>
-
-//           </div>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// }
-
-
 'use client';
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { IconArrowUpRight } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { IconArrowUpRight, IconCheck } from '@tabler/icons-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
-const schema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email"),
-  phone: z.string().optional(),
-  subject: z.string().optional(),
-  message: z.string().min(5, "Message is required"),
-  honeypot: z.string().optional(),
-});
-
-type FormData = z.infer<typeof schema>;
-
-export default function ContactSection({ locale = "en" }) {
+export default function ContactSection({ locale }: { locale: string }) {
   const [success, setSuccess] = useState(false);
+  const t = useTranslations('contact');
+
+  const schema = z.object({
+    name: z.string().min(2, t('validation.nameRequired')),
+    email: z
+      .string()
+      .min(1, t('validation.emailRequired'))
+      .email(t('validation.emailRequired')),
+    phone: z.string().optional(),
+    subject: z.string().optional(),
+    message: z.string().min(5, t('validation.messageRequired')),
+    honeypot: z.string().optional(),
+  });
+
+  type FormData = z.infer<typeof schema>;
 
   const {
     register,
@@ -207,9 +37,9 @@ export default function ContactSection({ locale = "en" }) {
   });
 
   const onSubmit = async (data: FormData) => {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...data, locale }),
     });
 
@@ -218,68 +48,173 @@ export default function ContactSection({ locale = "en" }) {
     if (result.success) {
       setSuccess(true);
       reset();
+      setTimeout(() => setSuccess(false), 5000);
     }
   };
 
   return (
-    <section className="bg-[#EDE9E3] py-40 px-6">
-      <div className="max-w-2xl mx-auto">
+    <section className="bg-[#EDE9E3] py-20 pt-32 px-6">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+        {/* LEFT SIDE - FORM */}
+        <div>
+          <h2 className="text-4xl md:text-5xl font-semibold text-black leading-tight mb-6">
+            {t('title')}
+          </h2>
 
-        {success && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg"
-          >
-            {locale === "ar"
-              ? "تم إرسال رسالتك بنجاح!"
-              : "Your message has been sent successfully!"}
-          </motion.div>
-        )}
+          <p className="text-gray-600 mb-10 max-w-md">{t('description')} </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <AnimatePresence>
+            {success && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: -20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: 'spring' }}
+                  className="bg-green-500 rounded-full p-1"
+                >
+                  <IconCheck size={20} className="text-white" />
+                </motion.div>
+                <p className="text-green-700 font-medium">
+                  {t('form.thankYou')}{' '}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-          {/* Honeypot (hidden spam field) */}
-          <input
-            type="text"
-            {...register("honeypot")}
-            className="hidden"
-          />
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <input
+              type="text"
+              {...register('honeypot')}
+              className="hidden"
+              aria-hidden="true"
+              tabIndex={-1}
+            />
 
-          <input
-            {...register("name")}
-            placeholder="Your name"
-            className="w-full p-3 rounded-md"
-          />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label className="text-sm text-gray-700 mb-2 block">
+                  {t('form.name')}
+                </label>
+                <input
+                  type="text"
+                  {...register('name')}
+                  placeholder={t('form.namePlaceholder')}
+                  className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
+                />
+                {errors.name && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.name.message}
+                  </p>
+                )}
+              </div>
 
-          <input
-            {...register("email")}
-            placeholder="Email"
-            className="w-full p-3 rounded-md"
-          />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+              <div>
+                <label className="text-sm text-gray-700 mb-2 block">
+                  {t('form.email')}
+                </label>
+                <input
+                  type="email"
+                  {...register('email')}
+                  placeholder={'name@example.com'}
+                  className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+            </div>
 
-          <textarea
-            {...register("message")}
-            placeholder="Message"
-            rows={4}
-            className="w-full p-3 rounded-md"
-          />
-          {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label className="text-sm text-gray-700 mb-2 block">
+                  {t('form.phone')}
+                </label>
+                <input
+                  type="tel"
+                  {...register('phone')}
+                  placeholder="+966 xxx xxx"
+                  className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
+                />
+              </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="group inline-flex items-center gap-3 bg-[#C08E46] text-white px-6 py-3 rounded-full"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-            <span className="bg-white rounded-full p-2">
-              <IconArrowUpRight size={16} className="text-black" />
-            </span>
-          </button>
-        </form>
+              <div>
+                <label className="text-sm text-gray-700 mb-2 block">
+                  {t('form.subject')}{' '}
+                </label>
+                <input
+                  type="text"
+                  {...register('subject')}
+                  placeholder={t('form.subject')}
+                  className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="text-sm text-gray-700 mb-2 block">
+                {t('form.message')}{' '}
+              </label>
+              <textarea
+                {...register('message')}
+                rows={5}
+                placeholder={t('form.messagePlaceholder')}
+                className="w-full bg-white/60 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#C08E46]"
+              />
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.message.message}
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group inline-flex items-center gap-4 bg-[#C08E46] text-white px-6 py-3 rounded-full shadow-md hover:opacity-90 transition disabled:opacity-50"
+            >
+              {isSubmitting ? t('form.sending') : t('form.submit')}
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white">
+                <IconArrowUpRight size={18} className="text-black" />
+              </span>
+            </button>
+          </form>
+        </div>
+
+        {/* RIGHT SIDE - IMAGE */}
+        <div>
+          <div className="relative w-full h-[400px] mb-8">
+            <Image
+              src="https://res.cloudinary.com/du8hedlvt/image/upload/v1771440343/contactpage_n284nq.png"
+              alt="Interior"
+              fill
+              className="object-cover rounded-md"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
 }
+
+//  "contact": {
+//     "title": "Begin Your Journey with NAYAN",
+//     "description": "Get in touch with us to learn more about our projects and discuss investment opportunities",
+//     "form": {
+//       "name": "Name",
+//       "namePlaceholder": "Enter your name",
+//       "email": "Email",
+//       "emailPlaceholder": "Enter your email",
+//       "phone": "Phone Number",
+//       "subject": "Subject",
+//       "message": "Message",
+//       "messagePlaceholder": "Type your message here",
+//       "submit": "Send Message"
+//     }
+//   }

@@ -5,10 +5,9 @@ interface Edge {
   description: string;
 }
 
-
 export default function WhyChooseUS() {
   const t = useTranslations('homePage.whyChooseUS');
-    const edges = t.raw('items') as Edge[];
+  const edges = t.raw('items') as Edge[];
 
   return (
     <section className={`py-16 md:py-24 'bg-[#f3efe9]'`}>

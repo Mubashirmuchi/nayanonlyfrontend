@@ -1,10 +1,12 @@
 import ContactSection from '@/components/ContactPage';
 import { PageWrapper } from '@/components/PageWrapper';
 
-const ContactPage = () => {
+const ContactPage = async ({ params }: { params: { locale: string } }) => {
+  const { locale } = await params;
+
   return (
     <PageWrapper>
-      <ContactSection />
+      <ContactSection locale={locale} />
     </PageWrapper>
   );
 };

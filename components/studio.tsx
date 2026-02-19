@@ -6,65 +6,61 @@ import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuRadioGroup,
-    DropdownMenuRadioItem,
-    DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
 type Props = {
-    trigger: ReactNode;
-    defaultOpen?: boolean;
-    align?: 'start' | 'center' | 'end';
+  trigger: ReactNode;
+  defaultOpen?: boolean;
+  align?: 'start' | 'center' | 'end';
 };
 
 const labels: Record<string, string> = {
-    en: 'English',
-    de: 'Deutsch',
-    ar: 'العربية',
+  en: 'English',
+  de: 'Deutsch',
+  ar: 'العربية',
 };
 
 export default function LanguageDropdown({
-    defaultOpen,
-    align,
-    trigger,
+  defaultOpen,
+  align,
+  trigger,
 }: Props) {
-    const locale = useLocale();
-    const router = useRouter();
-    const pathname = usePathname();
-    const [isPending, startTransition] = useTransition();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
 
-    function changeLocale(nextLocale: string) {
-        startTransition(() => {
-            router.replace(
-                pathname,
-                { locale: nextLocale },
-            );
-        });
-    }
+  function changeLocale(nextLocale: string) {
+    startTransition(() => {
+      router.replace(pathname, { locale: nextLocale });
+    });
+  }
 
-    return (
-        <DropdownMenu defaultOpen={defaultOpen}>
-            <DropdownMenuTrigger className='p-0' asChild>{trigger}</DropdownMenuTrigger>
+  return (
+    <DropdownMenu defaultOpen={defaultOpen}>
+      <DropdownMenuTrigger className="p-0" asChild>
+        {trigger}
+      </DropdownMenuTrigger>
 
-            <DropdownMenuContent className="w-44" align={align || 'end'}>
-                <DropdownMenuRadioGroup
-                    value={locale}
-                    onValueChange={changeLocale}
-                >
-                    {routing.locales.map((cur) => (
-                        <DropdownMenuRadioItem
-                            key={cur}
-                            value={cur}
-                            disabled={isPending}
-                            className="pl-2 text-base"
-                        >
-                            {labels[cur] || cur.toUpperCase()}
-                        </DropdownMenuRadioItem>
-                    ))}
-                </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    );
+      <DropdownMenuContent className="w-44" align={align || 'end'}>
+        <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
+          {routing.locales.map((cur) => (
+            <DropdownMenuRadioItem
+              key={cur}
+              value={cur}
+              disabled={isPending}
+              className="pl-2 text-base"
+            >
+              {labels[cur] || cur.toUpperCase()}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 }

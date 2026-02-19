@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { IconArrowUpRight } from "@tabler/icons-react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import React from "react";
+import { Button } from '@/components/ui/button';
+import { IconArrowUpRight } from '@tabler/icons-react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import React from 'react';
 
 type PrimaryButtonProps = {
   text: string;
@@ -11,12 +11,7 @@ type PrimaryButtonProps = {
   icon?: React.ReactNode;
 };
 
-const PrimaryButton = ({
-  text,
-  href,
-  className,
-  icon,
-}: PrimaryButtonProps) => {
+const PrimaryButton = ({ text, href, className, icon }: PrimaryButtonProps) => {
   const content = (
     <Button
       className={cn(

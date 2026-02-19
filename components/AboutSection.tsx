@@ -46,10 +46,10 @@ export default function About() {
             </p>
 
             {/* Button */}
-           {/* <IconBuildingSkyscraper/> */}
-           {/* <IconBriefcase/> */}
-           {/* <IconSettingsPin/> */}
-           {/* <IconFileLike/> */}
+            {/* <IconBuildingSkyscraper/> */}
+            {/* <IconBriefcase/> */}
+            {/* <IconSettingsPin/> */}
+            {/* <IconFileLike/> */}
             <PrimaryButton href="/" text={t('cta')} />
           </div>
         </div>

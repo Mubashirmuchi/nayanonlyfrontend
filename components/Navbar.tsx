@@ -18,9 +18,12 @@ import PrimaryButton from './PrimaryButton';
 import { Globe } from 'lucide-react';
 
 export function NavbarComponent({ locale }: { locale: string }) {
-const pathname = usePathname(); 
- const t = useTranslations('global.navbar');
-  const isContactPage = pathname === '/contact';
+  const pathname = usePathname();
+  const t = useTranslations('global.navbar');
+
+  const forceVisibleTrue = ['/contact', '/inprogress'].some((path) =>
+    pathname.endsWith(path)
+  );
 
   const navItems = [
     {
@@ -30,23 +33,17 @@ const pathname = usePathname();
     },
     {
       name: t('about'),
-      link: '/',
+      link: '/inprogress',
       hideWhenVisible: false,
     },
     {
-      name: t('contact'),
-      link: '/',
+      name: t('projects'),
+      link: '/inprogress',
       hideWhenVisible: false,
-    },
-
-    {
-      name: t('blogs'),
-      link: '/blogs',
-      hideWhenVisible: true,
     },
     {
       name: t('services'),
-      link: '/',
+      link: '/inprogress',
       hideWhenVisible: false,
     },
   ];
@@ -55,7 +52,7 @@ const pathname = usePathname();
 
   return (
     // <Navbar>
-    <Navbar forceVisible={isContactPage}>
+    <Navbar forceVisible={forceVisibleTrue}>
       {/* Desktop Navigation */}
       <NavBody>
         <NavbarLogo />
@@ -65,11 +62,17 @@ const pathname = usePathname();
           <LanguageDropdown
             defaultOpen={false}
             trigger={
-                
-                <NavbarButton className='capitalize flex gap-1' variant="secondary"><Globe size={20}/>{locale}</NavbarButton>}
+              <NavbarButton
+                className="capitalize flex gap-1"
+                variant="secondary"
+              >
+                <Globe size={20} />
+                {locale}
+              </NavbarButton>
+            }
           />
 
-          <PrimaryButton href='/contact' text={t('consultation')} />
+          <PrimaryButton href="/contact" text={t('consultation')} />
         </div>
       </NavBody>
 
@@ -78,19 +81,23 @@ const pathname = usePathname();
         <MobileNavHeader>
           <NavbarLogo />
           <div className="flex justify-center items-center gap-4 ">
-             <LanguageDropdown
-             
-            defaultOpen={false}
-            trigger={
-                
-                <NavbarButton className='capitalize flex gap-1' variant="secondary"><Globe size={24}/>{locale}</NavbarButton>}
-          />
-          <MobileNavToggle
-
-          
-            isOpen={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          /></div>
+            <LanguageDropdown
+              defaultOpen={false}
+              trigger={
+                <NavbarButton
+                  className="capitalize flex gap-1"
+                  variant="secondary"
+                >
+                  <Globe size={24} />
+                  {locale}
+                </NavbarButton>
+              }
+            />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu
@@ -107,6 +114,7 @@ const pathname = usePathname();
               <span className="block">{item.name}</span>
             </Link>
           ))}
+          <PrimaryButton href="/contact" text={t('consultation')} />
           {/* <div className="flex w-full flex-col gap-4">
             <NavbarButton
               onClick={() => setIsMobileMenuOpen(false)}

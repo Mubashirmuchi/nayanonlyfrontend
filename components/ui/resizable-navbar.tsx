@@ -6,7 +6,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'framer-motion';
-import {   SidebarOpenIcon, X } from 'lucide-react';
+import { SidebarOpenIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -158,7 +158,6 @@ export const NavItems = ({
           onClick={onItemClick}
           //   className={`relative px-4 py-2 ${isVisible  ? 'text-black' : 'text-white'}  dark:text-neutral-300`}
           className={`relative px-4 py-2 ${hovered === idx ? 'text-black dark:text-white' : isVisible ? 'text-black' : 'text-white'} dark:text-neutral-300`}
-          
           key={`link-${idx}`}
           href={`/${locale}/${item.link}`}
         >
@@ -291,15 +290,14 @@ export const MobileNavToggle = ({
 }) => {
   const isVisible = useContext(NavbarVisibilityContext);
   const Icon = isOpen ? X : SidebarOpenIcon;
-  const iconColor = isVisible ? "text-black" : "text-white";
+  const iconColor = isVisible ? 'text-black' : 'text-white';
 
   return (
     <span className={iconColor} onClick={onClick}>
-      <Icon className={iconColor}  size={30}/>
+      <Icon className={iconColor} size={30} />
     </span>
   );
 };
-
 
 export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
   // const contextVisible = useContext(NavbarVisibilityContext);
@@ -339,13 +337,12 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<'button'>
 )) => {
   const isVisible = useContext(NavbarVisibilityContext);
-  
+
   const baseStyles =
     'px-4 py-2 rounded-md button text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center';
 
   const variantStyles = {
-    primary:
-      `${isVisible ? 'bg-white text-black' : 'bg-transparent text-white border border-white'} shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]`,
+    primary: `${isVisible ? 'bg-white text-black' : 'bg-transparent text-white border border-white'} shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]`,
     secondary: `bg-transparent shadow-none ${isVisible ? 'text-black' : 'text-white'} dark:text-white`,
     dark: `${isVisible ? 'bg-black text-white' : 'bg-white text-black'} shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]`,
     gradient:

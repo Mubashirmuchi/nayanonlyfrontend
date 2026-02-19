@@ -1,9 +1,10 @@
 {
+  "workinprogress": "Our Team is working on this page",
   "global": {
     "navbar": {
       "home": "Home",
       "about": "About Us",
-      "contact": "Projects",
+      "projects": "Projects",
       "blogs": "Blogs",
       "services": "Services",
       "consultation": "Consultation"
@@ -36,8 +37,11 @@
         "phone": "Phone",
         "copyright": "© 2026. All Rights Reserved."
       },
-      "whatsappMessage": "Hello, I would like to know more about your projects."
-    }
+      "whatsappMessage": "Hello, I would like to know more about your projects.",
+      "headquarters": "Headquarters",
+      "headquartersAddress": " Muhammed Rashed Abunayyanan Company,\nAl Malqa, Riyadh 13525, Saudi Arabia"
+    },
+    "marquee": "smart ✽ future ✽ scalable ✽ solutions ✽ Designs ✽ transformation ✽ Valuable ✽ Designs ✽ future ✽ solutions ✽"
   },
   "homePage": {
     "hero": {
@@ -151,6 +155,34 @@
       "title": "Ready to Find Your Dream Home with Nayan?",
       "description": "Let us help you find a home that reflects your lifestyle, quality expectations, and long-term goals.",
       "cta": "Get in Touch"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for doesn’t exist or has been moved.",
+    "button": "Return Home"
+  },
+  "contact": {
+    "title": "Begin Your Journey with NAYAN",
+    "description": "Get in touch with us to learn more about our projects and discuss investment opportunities",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "Type your message here",
+      "submit": "Send Message",
+      "sending": " Sending...",
+      "thankYou": "Thank you for reaching out to us we will contact you shortly!"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "messageRequired": "Message is required",
+      "phoneRequired": "Phone number is required"
     }
   }
 }

@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
 import AnimatePresence from '@/components/AnimatePresence';
+import { cn } from '@/lib/utils';
 import '../globals.css';
 
 const geistSans = Geist({
@@ -25,7 +26,6 @@ const cairo = Cairo({
   variable: '--font-arabic',
   subsets: ['arabic'],
 });
-
 
 type Props = {
   children: React.ReactNode;
@@ -47,12 +47,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
       <body
-        className={`bg-[#F8F5EF]
-    ${geistSans.variable} 
-    ${geistMono.variable} 
-    ${locale === 'ar' ? cairo.variable : ''}
-    antialiased
-  `}
+        className={cn(
+          geistSans.variable,
+          geistMono.variable,
+          locale === 'ar' && cairo.variable,
+          'antialiased'
+        )}
       >
         <NextIntlClientProvider messages={messages}>
           <AnimatePresence itemKey={locale}>
