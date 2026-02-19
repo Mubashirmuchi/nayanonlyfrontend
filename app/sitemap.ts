@@ -1,10 +1,10 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nayan.sa";
+  const baseUrl = 'https://nayan.sa';
 
-  const routes = ["", "/about", "/contact", "/services"];
-  const locales = ["en", "ar"];
+  const routes = ['', '/about', '/contact', '/services'];
+  const locales = ['en', 'ar'];
 
   const sitemap: MetadataRoute.Sitemap = [];
 
@@ -13,8 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       sitemap.push({
         url: `${baseUrl}/${locale}${route}`,
         lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: route === "" ? 1 : 0.7,
+        changeFrequency: 'weekly',
+        priority: route === '' ? 1 : 0.7,
       });
     });
   });
