@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
 import AnimatePresence from '@/components/AnimatePresence';
+import { OrganizationJsonLd } from "@/components/SeoJsonLd";
 import { cn } from '@/lib/utils';
 import '../globals.css';
 
@@ -54,6 +55,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           'antialiased'
         )}
       >
+        <OrganizationJsonLd locale={locale} />
+
         <NextIntlClientProvider messages={messages}>
           <AnimatePresence itemKey={locale}>
             <NavbarComponent locale={locale} />
@@ -65,3 +68,4 @@ export default async function LocaleLayout({ children, params }: Props) {
     </html>
   );
 }
+

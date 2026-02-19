@@ -3,7 +3,7 @@ import BackgroundVideo from '@/components/HeroVideo';
 import PrimaryButton from './PrimaryButton';
 import { useTranslations } from 'next-intl';
 
-export default function Hero() {
+export default function Hero({}) {
   const t = useTranslations('homePage.hero');
   const videoUrl =
     'https://res.cloudinary.com/du8hedlvt/video/upload/v1771428053/0914_dlisnj_3__1_notci8.mp4';
