@@ -22,6 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
     : 'Discover timeless developments crafted for refined modern living. Explore Nayan’s premium real estate projects and investment opportunities in Saudi Arabia.';
 
   const url = `https://nayan.sa/${locale}`;
+const ogImage =
+  "https://res.cloudinary.com/du8hedlvt/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1771433276/aboutnayan_msfwqt.png";
 
   return {
     title,
@@ -50,31 +52,26 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
 
-    openGraph: {
-      title,
-      description,
-      url,
-      siteName: 'Nayan',
-      images: [
-        {
-          url: 'https://res.cloudinary.com/du8hedlvt/image/upload/v1771433276/aboutnayan_msfwqt.png',
-          width: 1200,
-          height: 630,
-          alt: isArabic ? 'نايان للعقارات' : 'Nayan Real Estate',
-        },
-      ],
-      locale: isArabic ? 'ar_SA' : 'en_US',
-      type: 'website',
+  openGraph: {
+  title,
+  description,
+  images: [
+    {
+      url: ogImage,
+      width: 1200,
+      height: 630,
+      alt: "Nayan Real Estate",
     },
+  ],
+},
 
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [
-        'https://res.cloudinary.com/du8hedlvt/image/upload/v1771433276/aboutnayan_msfwqt.png',
-      ],
-    },
+twitter: {
+  card: "summary_large_image",
+  title,
+  description,
+  images: [ogImage],
+},
+ 
 
     robots: {
       index: true,
