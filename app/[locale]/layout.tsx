@@ -8,6 +8,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import AnimatePresence from '@/components/AnimatePresence';
 import { OrganizationJsonLd } from '@/components/SeoJsonLd';
 import { cn } from '@/lib/utils';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import '../globals.css';
 
 const geistSans = Geist({
@@ -64,6 +65,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Footer />
           </AnimatePresence>
         </NextIntlClientProvider>
+         <SpeedInsights />
       </body>
     </html>
   );
