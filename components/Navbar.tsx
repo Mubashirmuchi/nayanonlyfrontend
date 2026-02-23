@@ -21,9 +21,15 @@ export function NavbarComponent({ locale }: { locale: string }) {
   const pathname = usePathname();
   const t = useTranslations('global.navbar');
 
-  const forceVisibleTrue = ['/contact', '/inprogress'].some((path) =>
+  // const forceVisibleTrue = ['/contact', '/inprogress','/about','properties',].some((path) =>
+  //   pathname.endsWith(path)
+  // );
+
+  const forceVisibleTrue =
+  ['/contact', '/inprogress', '/about'].some((path) =>
     pathname.endsWith(path)
-  );
+  ) ||
+  pathname.includes('/properties');
 
   const navItems = [
     {
@@ -33,17 +39,17 @@ export function NavbarComponent({ locale }: { locale: string }) {
     },
     {
       name: t('about'),
-      link: '/inprogress',
+      link: '/about',
       hideWhenVisible: false,
     },
     {
       name: t('projects'),
-      link: '/inprogress',
+      link: '/properties',
       hideWhenVisible: false,
     },
     {
       name: t('services'),
-      link: '/inprogress',
+      link: '#services',
       hideWhenVisible: false,
     },
   ];

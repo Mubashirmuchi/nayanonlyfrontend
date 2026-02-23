@@ -24,7 +24,7 @@ export default function ServiceBlock() {
   };
 
   return (
-    <section className={`py-16 md:py-24 flex flex-col gap-10  md:gap-18 `}>
+    <section id='services' className={`py-16 md:py-24 flex flex-col gap-10  md:gap-18 `}>
       {/* Header */}
       <div className="container mx-auto px-4 text-center max-w-2xl ">
         <div className="inline-block border border-gray-400 rounded-full px-4 py-1 text-sm tracking-wide mb-4">
