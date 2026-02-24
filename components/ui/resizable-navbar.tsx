@@ -239,7 +239,6 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
@@ -260,26 +259,7 @@ export const MobileNavMenu = ({
   );
 };
 
-// export const MobileNavToggle = ({
-//   isOpen,
-//   onClick,isVisible
-// }: {
-//   isOpen: boolean;
-//   onClick: () => void;
-//   isVisible: boolean
-// }) => {
-//   return isOpen ? (
-//     // <IconX className="text-black dark:text-white" onClick={onClick} />
-//     <span className="text-black dark:text-white" onClick={onClick}>
-//      <SidebarCloseIcon/>
-//     </span>
-//   ) : (
-//     // <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
-//     <span className="text-black dark:text-white" onClick={onClick}>
-//       <SidebarOpenIcon/>
-//     </span>
-//   );
-// };
+
 
 export const MobileNavToggle = ({
   isOpen,
@@ -300,8 +280,7 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
-  // const contextVisible = useContext(NavbarVisibilityContext);
-  // const visible = isVisible ?? contextVisible;
+
   return (
     <Link
       href="/"

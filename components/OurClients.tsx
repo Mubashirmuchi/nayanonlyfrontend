@@ -1,4 +1,4 @@
-import React from 'react'
+import Image from 'next/image'
 
 const OurClients = () => {
   return (
@@ -43,7 +43,9 @@ const OurClients = () => {
 
       {/* Top Right Image */}
       <div className="aspect-square overflow-hidden">
-        <img
+        <Image
+         width={500}
+         height={500}
           src="/frame.jpeg"
           alt="Interior"
           className="w-full h-full object-cover"
@@ -51,8 +53,10 @@ const OurClients = () => {
       </div>
 
       {/* Bottom Large Image */}
-      <div className="col-span-2 aspect-[16/9] overflow-hidden">
-        <img
+      <div className="col-span-2  aspect-video overflow-hidden">
+        <Image
+          width={500}
+         height={500}
           src="/frame.png"
           alt="Building"
           className="w-full h-full object-cover"
