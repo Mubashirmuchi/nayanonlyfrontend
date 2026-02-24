@@ -89,6 +89,12 @@
         }
       ]
     },
+
+    "featuredProjects":{
+      "label": "FEATURED PROJECTS",
+      "title": "Discover Handpicked Homes That Define Elegance",
+      "description": "Each project is planned and delivered with a focus on quality, functionality, and enduring value."   },
+  
     "whyChooseUS": {
       "label": "WHY CHOOSE US",
       "title": "Our Competitive Edge",

@@ -6,7 +6,7 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandYoutube,
-  IconBrandWhatsapp,
+  
   IconMapPin,
 } from '@tabler/icons-react';
 import {  MailIcon, PhoneIcon } from 'lucide-react'

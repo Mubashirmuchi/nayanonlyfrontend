@@ -1,14 +1,15 @@
 import GetinTouch from '@/components/GetinTouch';
 import { PageWrapper } from '@/components/PageWrapper';
-import PropertiesComponent from '@/components/Properties';
+import PropertiesHeader from '@/components/Properties';
 import PropertyGrid from '@/components/PropertyGrid';
+import { properties1 } from '@/data/properties';
 
 const Properties = () => {
   return (
     <PageWrapper>
       <main>
-        <PropertiesComponent />
-        <PropertyGrid />
+        <PropertiesHeader />
+        <PropertyGrid property={properties1} />
         <GetinTouch />
       </main>
     </PageWrapper>

@@ -1,12 +1,17 @@
 import About from '@/components/AboutSection';
 import ConnectUs from '@/components/ConnectUs';
+import FeaturedProjects from '@/components/FeaturedProjects';
 import Hero from '@/components/Hero';
+import CoreValuesSection from '@/components/Innovation';
+import OurClients from '@/components/OurClients';
 import { PageWrapper } from '@/components/PageWrapper';
 import ServicesBlock from '@/components/Services';
 import TestimonialsSwiper from '@/components/Testimonials';
+import RealEstateSection from '@/components/TrustedSecton';
 import WhyChooseUS from '@/components/WhyChooseUs';
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
+import { properties1,categories } from '@/data/properties';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -85,11 +90,17 @@ twitter: {
 }
 
 export default async function Home() {
+
+
   return (
-    <PageWrapper>
+    <PageWrapper >
       <Hero />
       <About />
       <ServicesBlock />
+      <FeaturedProjects categories={categories} properties={properties1}/>
+      <OurClients/>
+      <CoreValuesSection/>
+      <RealEstateSection/>
       <WhyChooseUS />
       <TestimonialsSwiper />
       <ConnectUs />

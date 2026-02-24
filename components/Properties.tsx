@@ -1,11 +1,10 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import React from 'react';
 
-const Properties = () => {
+const PropertiesHeader = () => {
   const t = useTranslations('propertyPage');
   return (
-    <section className="relative h-[420px] flex items-center justify-center text-white py-20 pt-32 px-6">
+    <section className="relative h-105 flex items-center justify-center text-white py-20 pt-32 px-6">
       <Image
         src="/frame.jpeg"
         alt="Developments"
@@ -29,4 +28,4 @@ const Properties = () => {
   );
 };
 
-export default Properties;
+export default PropertiesHeader;

@@ -2,29 +2,47 @@
 import clsx from 'clsx';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { properties } from '@/data/properties';
+
 import { Button } from './ui/button';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import PropertyPageCard from './PropertyPageCard';
+type LocalizedField = {
+  en: string;
+  ar: string;
+};
+
+type Property = {
+  id: number;
+  slug: string;
+  title: LocalizedField;
+  location: LocalizedField;
+  status: LocalizedField;
+  description: LocalizedField;
+  image: string;
+  area: string;
+  category: string;
+};
 
 type FilterType = {
   title: string;
   value: string
 }
 
-
-export default function PropertiesPage() {
+type FeaturedProjectsProps = {
+  properties: Property[];
+};
+export default function PropertiesPage ({ property }: FeaturedProjectsProps)  {
 
   const t = useTranslations('propertyPage');
 
+  const locale = useLocale();
   const filters = t.raw('filters') as FilterType[];
   const [active, setActive] = useState('all');
 
   const filtered =
     active === 'all'
-      ? properties
-      : properties.filter((item) => item.category.toLowerCase() === active);
+      ? property
+      : property.filter((item:Property) => item.category.toLowerCase() === active);
 
 
   return (
@@ -51,48 +69,13 @@ export default function PropertiesPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-        {filtered.map((item, i) => (
-          <Link key={item.id}
-           href={`/properties/${item.slug}`}
-           >
-            <div
-              key={i}
-              className="bg-white rounded-md overflow-hidden shadow-sm hover:shadow-lg transition"
-            >
-              {/* Image */}
-              <div className="relative h-70">
-                <Image
-                  src="/frame.jpeg"
-                  alt="Property"
-                  fill
-                  className="object-cover"
-                />
-
-                {/* Status Badge */}
-                <span className="absolute top-4 right-4 bg-white/90 text-xs px-3 py-1 rounded-full">
-                  Completed
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-lg font-semibold">AlmaIqa Center</h3>
-                  <span className="text-sm text-gray-500">18041.610 m²</span>
-                </div>
-
-                <p className="text-sm text-gray-500 mb-3">
-                  40 Offices | 45 Showroom | 123 Street, Riyadh, Saudi
-                </p>
-
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  A modern commercial centre with well-designed office and
-                  retail spaces in a strategic location.
-                </p>
-              </div>
-            </div>
-          </Link>
-        ))}
+{filtered.map((property) => (
+  <PropertyPageCard
+    key={property.id}
+    property={property}
+    locale={locale}
+  />
+))}
       </div>
     </section>
   );
