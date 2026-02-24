@@ -202,19 +202,3 @@ export default function ContactSection({ locale }: { locale: string }) {
     </section>
   );
 }
-
-//  "contact": {
-//     "title": "Begin Your Journey with NAYAN",
-//     "description": "Get in touch with us to learn more about our projects and discuss investment opportunities",
-//     "form": {
-//       "name": "Name",
-//       "namePlaceholder": "Enter your name",
-//       "email": "Email",
-//       "emailPlaceholder": "Enter your email",
-//       "phone": "Phone Number",
-//       "subject": "Subject",
-//       "message": "Message",
-//       "messagePlaceholder": "Type your message here",
-//       "submit": "Send Message"
-//     }
-//   }
