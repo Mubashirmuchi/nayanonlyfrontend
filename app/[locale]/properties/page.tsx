@@ -9,7 +9,7 @@ const Properties = () => {
     <PageWrapper>
       <main>
         <PropertiesHeader />
-        <PropertyGrid property={properties1} />
+        <PropertyGrid properties={properties1} />
         <GetinTouch />
       </main>
     </PageWrapper>
