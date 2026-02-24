@@ -31,7 +31,7 @@ type FilterType = {
 type FeaturedProjectsProps = {
   properties: Property[];
 };
-export default function PropertiesPage ({ property }: FeaturedProjectsProps)  {
+export default function PropertiesPage ({ properties }: FeaturedProjectsProps)  {
 
   const t = useTranslations('propertyPage');
 
@@ -41,8 +41,8 @@ export default function PropertiesPage ({ property }: FeaturedProjectsProps)  {
 
   const filtered =
     active === 'all'
-      ? property
-      : property.filter((item:Property) => item.category.toLowerCase() === active);
+      ? properties
+      : properties.filter((item) => item.category.toLowerCase() === active);
 
 
   return (
@@ -73,7 +73,7 @@ export default function PropertiesPage ({ property }: FeaturedProjectsProps)  {
   <PropertyPageCard
     key={property.id}
     property={property}
-    locale={locale}
+    locale={locale as 'en' | 'ar'}
   />
 ))}
       </div>
