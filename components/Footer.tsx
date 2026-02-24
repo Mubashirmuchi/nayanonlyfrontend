@@ -9,6 +9,8 @@ import {
   IconBrandWhatsapp,
   IconMapPin,
 } from '@tabler/icons-react';
+import {  MailIcon, PhoneIcon } from 'lucide-react'
+
 import MarqueeBlock from './Marquee';
 import { useLocale } from 'next-intl';
 
@@ -127,7 +129,7 @@ const Footer = () => {
         </div>
 
         {/* Contact */}
-       {/* Contact */}
+      
 <div className="space-y-6">
 
   {/* Email */}
@@ -142,7 +144,7 @@ const Footer = () => {
       className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
         ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
     >
-      <IconBrandWhatsapp size={18} className="shrink-0" />
+      <MailIcon size={18} className="shrink-0" />
       <span>admin@nayan.sa</span>
     </a>
   </div>
@@ -161,8 +163,8 @@ const Footer = () => {
       className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
         ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
     >
-      <IconBrandWhatsapp size={18} className="shrink-0" />
-      <span>056 129 1512</span>
+      <PhoneIcon size={18} className="shrink-0" />
+      <span>  +966 56 129 1512</span>
     </a>
   </div>
 
@@ -173,7 +175,7 @@ const Footer = () => {
     </h4>
 
     <a
-      dir={isArabic ? 'rtl' : 'ltr'}
+      dir={ 'ltr'}
       href="https://maps.app.goo.gl/nh7h5ykDu9TPRgHH7"
       target="_blank"
       rel="noopener noreferrer"
