@@ -61,21 +61,28 @@
       "description": "Our services span the full real estate lifecycle, from development and execution to management and investment consulting.",
       "services": [
         {
+          "count": "01",
           "icon": "IconBuildingSkyscraper",
           "title": "Development & Implementation",
           "description": "Residential and commercial projects delivered with a focus on quality, efficiency, and long-term value."
         },
         {
+          "count": "02",
+
           "icon": "IconBriefcase",
           "title": "Design & Build custom projects",
           "description": "Custom real estate projects tailored to functional, architectural, and client requirements."
         },
         {
+          "count": "03",
+
           "icon": "IconSettingsPin",
           "title": "Property Management & after-sales",
           "description": "Property management and after-sales services for long-term asset care and value."
         },
         {
+          "count": "04",
+
           "icon": "IconFileLike",
           "title": "Real estate investment consulting",
           "description": "Strategic real estate investment consulting supported by market insight and feasibility analysis."
@@ -157,6 +164,105 @@
       "cta": "Get in Touch"
     }
   },
+  "aboutPage": {
+    "label": "About Nayan",
+    "title": "Shaping Modern Urban Environments",
+    "description": "Nayan was established as a distinguished brand in the real estate sector... committed to meeting the needs of individuals and investors with full transparency and professionalism.",
+    "counts": [
+      {
+        "title": "25k+",
+        "description": "Trusted Customers"
+      },
+      {
+        "title": "5k+",
+        "description": "Successful Projects"
+      },
+      {
+        "title": "20+",
+        "description": "Years of Experience"
+      }
+    ],
+    "vision": [
+      {
+        "icon": "IconTargetArrow",
+        "title": "Our Goal",
+        "description": "To build integrated urban communities that enhance quality of life in Riyadh and across Saudi Arabia through high-quality projects supporting Vision 2030."
+      },
+      {
+        "icon": "Flag",
+        "title": "Our Mission",
+        "description": "To develop integrated real estate projects that fulfill the ambitions of individuals and investors while adding genuine value to cities and communities."
+      },
+      {
+        "icon": "IconEyeSearch",
+        "title": "Our Vision",
+        "description": "To be the first choice in real estate development and investment by delivering high-quality residential and commercial communities that excel in efficiency, location, and design."
+      }
+    ],
+
+    "coreValues": {
+      "label": "Our Core Values",
+      "title": "Principles That Guide Every Decision",
+      "description": "At Nayan we ensure that guide our planning, execution, and partnerships throughout every stage of development.",
+      "values": [
+        {
+          "count": "01",
+          "title": "Innovation",
+          "description": "Modern real estate solutions shaped by evolving market needs"
+        },
+        {
+          "count": "02",
+          "title": "Transparency",
+          "description": "Clear, credible, and honest engagement at every stage"
+        },
+        {
+          "count": "03",
+          "title": "Quality",
+          "description": "High standards across design, construction, and execution"
+        },
+        {
+          "count": "04",
+          "title": "Dedication",
+          "description": "Every project handled with care, commitment, and responsibility"
+        },
+        {
+          "count": "05",
+          "title": "Sustainability",
+          "description": "Responsible development that supports long-term urban growth"
+        },
+        {
+          "count": "06",
+          "title": "Client First",
+          "description": "Customer satisfaction placed at the center of every decision."
+        }
+      ]
+    }
+  },
+
+  "propertyPage": {
+    "title": "Our Developments",
+    "description": "Selected developments defined by quality, location, and long-term value.",
+    "filters": [
+      {
+        "title": "All",
+        "value": "all"
+      },
+      {
+        "title": "Villas",
+        "value": "villas"
+      },
+      {
+        "title": "Resort",
+        "value": "resort"
+      },
+      {
+        "title": "Duplex",
+        "value": "duplex"
+      }
+    ],
+    "getinTouch": "Get In Touch"
+  },
+
   "notFound": {
     "title": "Page Not Found",
     "description": "The page you are looking for doesn’t exist or has been moved.",
@@ -184,5 +290,28 @@
       "messageRequired": "Message is required",
       "phoneRequired": "Phone number is required"
     }
+  },
+  "getInTouch": {
+    "title": "Get In Touch",
+    "connects": [
+      {
+        "icon": "MailIcon",
+        "title": "We're always happy to help",
+        "link": "mailto:admin@nayan.sa",
+        "linkText": "admin@nayan.sa"
+      },
+      {
+        "icon": "PhoneIcon",
+        "title": "Our Hotline Number",
+        "link": "tel:+966 56129 1512",
+        "linkText": "+966 56 129 1512"
+      },
+      {
+        "icon": "IconLocationPin",
+        "title": "Visit Our Office",
+        "link": "https://maps.app.goo.gl/nh7h5ykDu9TPRgHH7",
+        "linkText": " Office: Muhammed Rashed Abunayyanan Company, Al Malqa, Riyadh 13525, Saudi Arabia"
+      }
+    ]
   }
 }

@@ -6,8 +6,9 @@ import {
   IconFileLike,
 } from '@tabler/icons-react';
 
-interface Service {
+export interface Service {
   id: string;
+  count: string;
   title: string;
   description: string;
   icon: string;

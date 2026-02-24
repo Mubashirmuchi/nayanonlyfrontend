@@ -6,16 +6,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { properties } from '@/data/properties';
 import { Button } from './ui/button';
+import { useTranslations } from 'next-intl';
 
-const filters = ['All', 'Villas', 'Resort', 'Duplex'];
+type FilterType = {
+  title: string;
+  value: string
+}
+
 
 export default function PropertiesPage() {
-  const [active, setActive] = useState('All');
+
+  const t = useTranslations('propertyPage');
+
+  const filters = t.raw('filters') as FilterType[];
+  const [active, setActive] = useState('all');
 
   const filtered =
-    active === 'All'
+    active === 'all'
       ? properties
-      : properties.filter((item) => item.category === active);
+      : properties.filter((item) => item.category.toLowerCase() === active);
+
 
   return (
     <section className="bg-[#f4f1ec] pb-20">
@@ -24,16 +34,16 @@ export default function PropertiesPage() {
           <div className="flex flex-wrap gap-3">
             {filters.map((filter, i) => (
               <Button
-                onClick={() => setActive(filter)}
+                onClick={() => setActive(filter.value)}
                 key={i}
                 className={clsx(
                   'px-5 py-2 rounded-full text-sm border duration-300 bg-white hover:bg-[#c69c5d] hover:text-white transition',
-                  active === filter
+                  active === filter.value
                     ? 'bg-[#c69c5d] text-white border-[#c69c5d]'
                     : 'bg-white text-gray-600 border-gray-300 hover:bg-[#c69c5d] hover:text-white'
                 )}
               >
-                {filter}
+                {filter.title}
               </Button>
             ))}
           </div>

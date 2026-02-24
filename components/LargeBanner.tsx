@@ -1,82 +1,78 @@
-import React from 'react'
-import Image from 'next/image'
-import { IconEyeSearch, IconTargetArrow } from '@tabler/icons-react'
-import { Flag } from 'lucide-react'
+import React from 'react';
+import Image from 'next/image';
+import { IconEyeSearch, IconTargetArrow } from '@tabler/icons-react';
+import { Flag } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+
+type visions = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
 const LargeBanner = () => {
-   const image3= "/image3.jpeg"
+  const image3 = '/image3.jpeg';
+
+  const t = useTranslations('aboutPage');
+  const data = t.raw('vision');
+
 
   return (
- <section className="py-20">
-  <div className="max-w-7xl mx-auto px-6">
+    <section className="py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Outer Border Container */}
+        <div className="border border-[#d6b98c] p-6">
+          {/* Top Image */}
+          <div className="relative w-full h-[350px] mb-12">
+            <Image
+              src={image3}
+              alt="Luxury Building"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
 
-    {/* Outer Border Container */}
-    <div className="border border-[#d6b98c] p-6">
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            {data.map((visions: visions, index: number) => (
+              <div key={index} className="bg-[#efefef] p-8">
+                <div className="w-14 h-14 bg-[#c69c5d] rounded-full flex items-center justify-center mb-6">
+                  <Icon icon={visions.icon} />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{visions.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                {visions.description}
+                </p>
+              </div>
+            ))}
 
-      {/* Top Image */}
-      <div className="relative w-full h-[350px] mb-12">
-        <Image
-          src={image3}
-          alt="Luxury Building"
-          fill
-
-className="object-cover object-top"        />
+           
+          </div>
+        </div>
       </div>
+    </section>
+  );
+};
 
-      {/* Cards */}
-      <div className="grid md:grid-cols-3 gap-8">
+export default LargeBanner;
 
-        {/* Card 1 */}
-        <div className="bg-[#efefef] p-8">
-          <div className="w-14 h-14 bg-[#c69c5d] rounded-full flex items-center justify-center mb-6">
-            <IconTargetArrow color='white'/>
-          </div>
 
-          <h3 className="text-xl font-semibold mb-4">
-            Our Goal
-          </h3>
+const Icon =({icon}:{icon:string})=>{
 
-          <p className="text-gray-600 leading-relaxed text-sm">
-            To build integrated urban communities that enhance quality of life in Riyadh and across Saudi Arabia through high-quality projects supporting Vision 2030.
-          </p>
-        </div>
+  switch(icon){
+    case 'IconTargetArrow':
+      return(
+        <IconTargetArrow color='white'/>
+      )
+    case 'Flag':
+      return(
+        <Flag color='white'/>
+      )
+    case 'IconEyeSearch':
+      return(
+        <IconEyeSearch color='white'/>
+      )
+  }
 
-        {/* Card 2 */}
-        <div className="bg-[#efefef] p-8">
-          <div className="w-14 h-14 bg-[#c69c5d] rounded-full flex items-center justify-center mb-6">
-         <Flag color='white'/>
-          </div>
-
-          <h3 className="text-xl font-semibold mb-4">
-            Our Mission
-          </h3>
-
-          <p className="text-gray-600 leading-relaxed text-sm">
-            To develop integrated real estate projects that fulfill the ambitions of individuals and investors while adding genuine value to cities and communities.
-          </p>
-        </div>
-
-        {/* Card 3 */}
-        <div className="bg-[#efefef] p-8">
-          <div className="w-14 h-14 bg-[#c69c5d] rounded-full flex items-center justify-center mb-6">
-<IconEyeSearch color='white'
-/>
-          </div>
-
-          <h3 className="text-xl font-semibold mb-4">
-            Our Vision
-          </h3>
-
-          <p className="text-gray-600 leading-relaxed text-sm">
-            To be the first choice in real estate development and investment by delivering high-quality residential and commercial communities that excel in efficiency, location, and design.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-  )
 }
-
-export default LargeBanner

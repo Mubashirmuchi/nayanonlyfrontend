@@ -1,17 +1,18 @@
-// import FilterSection from '@/components/filters'
-import GetinTouch from '@/components/GetinTouch'
-import PropertiesComponent from '@/components/Properties'
-import PropertyGrid from '@/components/PropertyGrid'
+import GetinTouch from '@/components/GetinTouch';
+import { PageWrapper } from '@/components/PageWrapper';
+import PropertiesComponent from '@/components/Properties';
+import PropertyGrid from '@/components/PropertyGrid';
 
 const Properties = () => {
   return (
-    <main >
-      <PropertiesComponent/>
-      {/* <FilterSection/> */}
-      <PropertyGrid/>
-      <GetinTouch/>
-    </main>
-  )
-}
+    <PageWrapper>
+      <main>
+        <PropertiesComponent />
+        <PropertyGrid />
+        <GetinTouch />
+      </main>
+    </PageWrapper>
+  );
+};
 
-export default Properties
+export default Properties;

@@ -10,8 +10,11 @@ import {
   IconMapPin,
 } from '@tabler/icons-react';
 import MarqueeBlock from './Marquee';
+import { useLocale } from 'next-intl';
 
 const Footer = () => {
+  const locale = useLocale();
+  const isArabic = locale === 'ar';
   const t = useTranslations('global.footer');
   const message = encodeURIComponent(t('whatsappMessage'));
 
@@ -37,6 +40,7 @@ const Footer = () => {
       url: 'https://youtube.com',
     },
   ];
+
 
   return (
     <footer className="bg-black text-white">
@@ -123,42 +127,67 @@ const Footer = () => {
         </div>
 
         {/* Contact */}
-        <div>
-          <h4 className="font-semibold mb-3">{t('usefullinks.email')}</h4>
-          <a
-            href="mailto:admin@nayan.sa"
-            className="text-gray-400 text-sm mb-4 block hover:text-white transition"
-          >
-            admin@nayan.sa
-          </a>
+       {/* Contact */}
+<div className="space-y-6">
 
-          <h4 className="font-semibold mb-3">{t('usefullinks.phone')}</h4>
-          {/* <p className="text-gray-400 text-sm flex gap-1">
-            <IconBrandWhatsapp size={18}/>
-            +966 56 129 1512</p> */}
+  {/* Email */}
+  <div className="space-y-2">
+    <h4 className="font-semibold">
+      {t('usefullinks.email')}
+    </h4>
 
-          <a
-            href={`https://wa.me/966561291512?text=${message}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 text-sm flex items-center gap-1 hover:text-white transition"
-          >
-            <IconBrandWhatsapp size={18} />
-            +966 56 129 1512
-          </a>
+    <a
+      dir="ltr"
+      href="mailto:admin@nayan.sa"
+      className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
+        ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
+    >
+      <IconBrandWhatsapp size={18} className="shrink-0" />
+      <span>admin@nayan.sa</span>
+    </a>
+  </div>
 
-          <h4 className="font-semibold my-3">{t('headquarters')}</h4>
+  {/* Phone */}
+  <div className="space-y-2">
+    <h4 className="font-semibold">
+      {t('usefullinks.phone')}
+    </h4>
 
-          <a
-            href="https://maps.app.goo.gl/nh7h5ykDu9TPRgHH7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-start gap-1 text-gray-400 text-sm mb-4 hover:text-white transition"
-          >
-            <IconMapPin size={18} className="mt-0.5 shrink-0" />
-            <span>{t('headquartersAddress')}</span>
-          </a>
-        </div>
+    <a
+      dir="ltr"
+      href={`https://wa.me/966561291512?text=${message}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
+        ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
+    >
+      <IconBrandWhatsapp size={18} className="shrink-0" />
+      <span>056 129 1512</span>
+    </a>
+  </div>
+
+  {/* Address */}
+  <div className="space-y-2">
+    <h4 className="font-semibold">
+      {t('headquarters')}
+    </h4>
+
+    <a
+      dir={isArabic ? 'rtl' : 'ltr'}
+      href="https://maps.app.goo.gl/nh7h5ykDu9TPRgHH7"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`text-gray-400 text-sm flex items-start gap-3 hover:text-white transition
+        ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
+    >
+      <IconMapPin size={18} className="mt-1 shrink-0" />
+      <span className="leading-relaxed">
+        {t('headquartersAddress')}
+      </span>
+    </a>
+  </div>
+
+</div>
       </div>
 
       {/* Bottom bar */}
