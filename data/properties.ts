@@ -73,14 +73,14 @@ export const properties1 = [
 
   {
     id: 3,
-    slug: "urban-duplex-living",
-    title: { en: "Urban Duplex Living", ar: "الدوبلكس الحضري" },
+    slug: "nayan-31",
+    title: { en: "Nayan 31", ar: "نايان ٣١" },
     status: { en: "For Sale", ar: "للبيع" },
-    category: "Duplex",
+    category: "Villa",
     area: "1200 m²",
     location: { en: "Al Malqa, Riyadh", ar: "حي الملقا، الرياض" },
     coordinates: { lat: 24.820000, lng: 46.680000 },
-    gallery: ["/image3.jpeg"],
+    gallery: ["https://res.cloudinary.com/du8hedlvt/image/upload/v1772115442/WhatsApp_Image_2026-02-26_at_15.13.05_aaw4iq.jpg"],
     description: {
       en: "Contemporary duplex homes with spacious layouts.",
       ar: "منازل دوبلكس عصرية بتصاميم واسعة.",
@@ -104,7 +104,7 @@ export const properties1 = [
       ar: "مثالي للعائلات.",
     },
     developer: "NAYAN Real Estate",
-    image: "/image3.jpeg",
+    image: "https://res.cloudinary.com/du8hedlvt/image/upload/v1772115442/WhatsApp_Image_2026-02-26_at_15.13.05_aaw4iq.jpg",
   },
 
   {

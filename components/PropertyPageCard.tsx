@@ -33,7 +33,7 @@ const PropertyPageCard = ({ property, locale }: Props) => {
             src={property.image}
             alt={property.title[locale]}
             fill
-            className="object-cover transition-transform duration-500 hover:scale-105"
+            className="object-cover  transition-transform duration-500 hover:scale-105"
           />
 
           {/* Status Badge */}
@@ -46,7 +46,7 @@ const PropertyPageCard = ({ property, locale }: Props) => {
         <div className="p-6">
 
           {/* Title + Area */}
-          <div className="flex justify-between items-start mb-3">
+          <div className="flex justify-between items-start mb-1">
             <h3 className="text-lg font-semibold leading-snug">
               {property.title[locale]}
             </h3>
@@ -56,7 +56,7 @@ const PropertyPageCard = ({ property, locale }: Props) => {
           </div>
 
           {/* Location */}
-          <p className="text-sm text-gray-500 mb-3">
+          <p className="text-sm text-gray-500 mb-1">
             {property.location[locale]}
           </p>
 
