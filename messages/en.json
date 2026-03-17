@@ -90,11 +90,12 @@
       ]
     },
 
-    "featuredProjects":{
+    "featuredProjects": {
       "label": "FEATURED PROJECTS",
       "title": "Discover Handpicked Homes That Define Elegance",
-      "description": "Each project is planned and delivered with a focus on quality, functionality, and enduring value."   },
-  
+      "description": "Each project is planned and delivered with a focus on quality, functionality, and enduring value."
+    },
+
     "whyChooseUS": {
       "label": "WHY CHOOSE US",
       "title": "Our Competitive Edge",
@@ -139,26 +140,25 @@
         {
           "authorName": "Rayan Ahmed",
           "authorRole": "Verified Client",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437289/testimonial1_gzaunc.png",
+          "image": "/testimonial1.png",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Khalid",
           "authorRole": "Consultant",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
-
+          "image": "/testimonial3.png",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Abu Hassan",
           "authorRole": "Client",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437478/testimonial4_wvc3dr.png",
+          "image": "/testimonial2.png",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Ameer",
           "authorRole": "Verified Client",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
+          "image": "/testimonial2.png",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         }
       ]

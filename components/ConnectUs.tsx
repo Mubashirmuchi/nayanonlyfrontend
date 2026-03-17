@@ -4,15 +4,14 @@ import { useTranslations } from 'next-intl';
 const ConnectUs = () => {
   const t = useTranslations('homePage.connect');
 
-  const imgUrl =
-    'https://res.cloudinary.com/du8hedlvt/image/upload/v1771435820/lastsection_tsjv19.png';
+  const imgUrl = '/lastsection_tsjv19.webp';
 
   return (
     <section className="w-full bg-[#EDE9E4] py-12 lg:py-20 px-4 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto overflow-hidden rounded-2xl">
         <div className="flex flex-col lg:flex-row">
           {/* Left Image */}
-          <div className="relative w-full lg:w-[60%] h-[280px] sm:h-[360px] md:h-[420px] lg:h-[520px]">
+          <div className="relative w-full lg:w-[60%] h-70 sm:h-90 md:h-105 lg:h-130">
             <Image
               src={imgUrl}
               alt={'imgUrl'}

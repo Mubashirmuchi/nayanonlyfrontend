@@ -4,8 +4,7 @@ import Image from 'next/image';
 import PrimaryButton from './PrimaryButton';
 
 export default function About() {
-  const imgUrl =
-    'https://res.cloudinary.com/du8hedlvt/image/upload/v1771433276/aboutnayan_msfwqt.png';
+  const imgUrl = '/aboutnayan_msfwqt.webp';
   const t = useTranslations('homePage.about');
   return (
     <section className="relative w-full py-12 lg:py-20 bg-[#C08E4633] px-4 md:px-8 lg:px-12">

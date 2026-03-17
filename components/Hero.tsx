@@ -5,9 +5,9 @@ import { useTranslations } from 'next-intl';
 
 export default function Hero({}) {
   const t = useTranslations('homePage.hero');
-  const videoUrl =
-    'https://res.cloudinary.com/du8hedlvt/video/upload/v1771428053/0914_dlisnj_3__1_notci8.mp4';
-  const imgUrl ='https://res.cloudinary.com/du8hedlvt/image/upload/v1771777554/heroimage_gctqtr.png';
+  const videoUrl = '/videos/0914.mp4';
+  const imgUrl =
+    'https://res.cloudinary.com/du8hedlvt/image/upload/v1771777554/heroimage_gctqtr.png';
 
   return (
     <section
