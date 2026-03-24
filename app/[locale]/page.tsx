@@ -11,7 +11,7 @@ import RealEstateSection from '@/components/TrustedSecton';
 import WhyChooseUS from '@/components/WhyChooseUs';
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
-import { properties1,categories } from '@/data/properties';
+import { properties1, categories } from '@/data/properties';
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -27,8 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     : 'Discover timeless developments crafted for refined modern living. Explore Nayan’s premium real estate projects and investment opportunities in Saudi Arabia.';
 
   const url = `https://nayan.sa/${locale}`;
-const ogImage =
-  "https://res.cloudinary.com/du8hedlvt/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1771433276/aboutnayan_msfwqt.png";
+  const ogImage = '/aboutnayan_msfwqt.webp';
 
   return {
     title,
@@ -57,26 +56,25 @@ const ogImage =
       },
     },
 
-  openGraph: {
-  title,
-  description,
-  images: [
-    {
-      url: ogImage,
-      width: 1200,
-      height: 630,
-      alt: "Nayan Real Estate",
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: 'Nayan Real Estate',
+        },
+      ],
     },
-  ],
-},
 
-twitter: {
-  card: "summary_large_image",
-  title,
-  description,
-  images: [ogImage],
-},
- 
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
 
     robots: {
       index: true,
@@ -90,17 +88,15 @@ twitter: {
 }
 
 export default async function Home() {
-
-
   return (
-    <PageWrapper >
+    <PageWrapper>
       <Hero />
       <About />
       <ServicesBlock />
-      <FeaturedProjects categories={categories} properties={properties1}/>
-      <OurClients/>
-      <CoreValuesSection/>
-      <RealEstateSection/>
+      <FeaturedProjects categories={categories} properties={properties1} />
+      <OurClients />
+      <CoreValuesSection />
+      <RealEstateSection />
       <WhyChooseUS />
       <TestimonialsSwiper />
       <ConnectUs />

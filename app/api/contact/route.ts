@@ -4,282 +4,797 @@ import path from 'path';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const LOGO_URL = 'https://res.cloudinary.com/du8hedlvt/image/upload/v1772102825/logowhite_yifkuy.png';
+const LOGO_URL = 'https://i.postimg.cc/JzSBCw3g/logowhite.png';
 
 /* ================================================================
    ENGLISH TEMPLATE
 ================================================================ */
 function getEnglishTemplate(name: string): string {
-  return `
-  <!DOCTYPE html>
+  return `<!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <title>Nayan Real Estate</title>
-  <!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]-->
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
-    body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
-    table,td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
-    img{-ms-interpolation-mode:bicubic;border:0;outline:none;text-decoration:none;}
-    body{margin:0!important;padding:0!important;background-color:#f7f6f3;}
-    a{color:#b8973e;}
-    @media screen and (max-width:600px){
-      .container{width:100%!important;max-width:100%!important;}
-      .content-pad{padding:28px 20px!important;}
-      .sig-pad{padding:20px!important;}
-      .sig-grid td{display:block!important;width:100%!important;padding:0 0 8px 0!important;}
-      .logo-img{width:110px!important;}
-    }
-  </style>
-</head>
-<body style="margin:0;padding:0;background-color:#f7f6f3;">
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color:#f7f6f3;">
-  <tr><td align="center" style="padding:28px 12px;">
-
-    <table class="container" role="presentation" cellspacing="0" cellpadding="0" border="0" width="620"
-      style="max-width:620px;width:100%;background:#ffffff;border-radius:4px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
-
-      <!-- TOP BAR -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Nayan Real Estate</title>
+    <!--[if mso
+      ]><noscript
+        ><xml
+          ><o:OfficeDocumentSettings
+            ><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings
+          ></xml
+        ></noscript
+      ><!
+    [endif]-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap");
+      body,
+      table,
+      td,
+      a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+        border: 0;
+        outline: none;
+        text-decoration: none;
+      }
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: #f7f6f3;
+      }
+      a {
+        color: #b8973e;
+      }
+      @media screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .content-pad {
+          padding: 28px 20px !important;
+        }
+        .sig-pad {
+          padding: 20px !important;
+        }
+        .sig-grid td {
+          display: block !important;
+          width: 100% !important;
+          padding: 0 0 8px 0 !important;
+        }
+        .logo-img {
+          width: 110px !important;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #f7f6f3">
+    <table
+      role="presentation"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      width="100%"
+      style="background-color: #f7f6f3"
+    >
       <tr>
-        <td style="background:#111111;padding:20px 32px;border-bottom:3px solid #b8973e;">
-          <img class="logo-img" src="${LOGO_URL}" width="130" alt="Nayan" style="display:block;width:130px;max-width:130px;" />
-        </td>
-      </tr>
-
-      <!-- MAIN CONTENT -->
-      <tr>
-        <td class="content-pad" style="padding:36px 40px 28px;background:#ffffff;">
-
-          <p style="font-family:'Jost',Arial,sans-serif;font-size:16px;font-weight:400;color:#1a1a1a;margin:0 0 20px 0;line-height:1.5;">
-            Hi <strong>${name}</strong>, great to meet you!
-          </p>
-
-          <p style="font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:300;color:#333333;margin:0 0 16px 0;line-height:1.8;">
-            Thank you for your interest in <strong style="font-weight:500;color:#1a1a1a;">Nayan Real Estate</strong>. We specialize in premium residential and commercial properties designed for comfort, investment growth, and long-term value — and we'd love to help you find the perfect opportunity.
-          </p>
-
-          <p style="font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:300;color:#333333;margin:0 0 16px 0;line-height:1.8;">
-            Whether you're searching for a modern apartment, luxury villa, or commercial space, our team is ready to guide you every step of the way.
-          </p>
-
-          <p style="font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:300;color:#333333;margin:0 0 28px 0;line-height:1.8;">
-            To help us match you with the perfect property, please let us know:
-          </p>
-
-          <!-- Checklist -->
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-bottom:28px;">
-            <tr><td style="padding:0 0 10px 0;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="width:22px;vertical-align:top;padding-top:1px;">
-                    <div style="width:18px;height:18px;background:#b8973e;border-radius:50%;text-align:center;line-height:18px;font-family:Arial;font-size:11px;color:#ffffff;font-weight:bold;">&#10003;</div>
-                  </td>
-                  <td style="padding-left:10px;font-family:'Jost',Arial,sans-serif;font-size:14px;font-weight:300;color:#333333;line-height:1.6;">Preferred property type (apartment, villa, commercial)?</td>
-                </tr>
-              </table>
-            </td></tr>
-            <tr><td style="padding:0 0 10px 0;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="width:22px;vertical-align:top;padding-top:1px;">
-                    <div style="width:18px;height:18px;background:#b8973e;border-radius:50%;text-align:center;line-height:18px;font-family:Arial;font-size:11px;color:#ffffff;font-weight:bold;">&#10003;</div>
-                  </td>
-                  <td style="padding-left:10px;font-family:'Jost',Arial,sans-serif;font-size:14px;font-weight:300;color:#333333;line-height:1.6;">Intended use — personal living or investment?</td>
-                </tr>
-              </table>
-            </td></tr>
-            <tr><td style="padding:0 0 10px 0;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="width:22px;vertical-align:top;padding-top:1px;">
-                    <div style="width:18px;height:18px;background:#b8973e;border-radius:50%;text-align:center;line-height:18px;font-family:Arial;font-size:11px;color:#ffffff;font-weight:bold;">&#10003;</div>
-                  </td>
-                  <td style="padding-left:10px;font-family:'Jost',Arial,sans-serif;font-size:14px;font-weight:300;color:#333333;line-height:1.6;">Target budget?</td>
-                </tr>
-              </table>
-            </td></tr>
-            <tr><td style="padding:0 0 0 0;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="width:22px;vertical-align:top;padding-top:1px;">
-                    <div style="width:18px;height:18px;background:#b8973e;border-radius:50%;text-align:center;line-height:18px;font-family:Arial;font-size:11px;color:#ffffff;font-weight:bold;">&#10003;</div>
-                  </td>
-                  <td style="padding-left:10px;font-family:'Jost',Arial,sans-serif;font-size:14px;font-weight:300;color:#333333;line-height:1.6;">Any must-haves for your next property?</td>
-                </tr>
-              </table>
-            </td></tr>
-          </table>
-
-          <p style="font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:300;color:#333333;margin:0 0 8px 0;line-height:1.8;">
-            The fastest way to explore your options?
-          </p>
-          <p style="font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:400;margin:0 0 28px 0;line-height:1.8;">
-            <a href="https://www.nayan.sa" style="color:#b8973e;text-decoration:underline;font-weight:500;">Browse our latest properties &rarr;</a>
-          </p>
-
-          <p style="font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:300;color:#333333;margin:0;line-height:1.8;">
-            Looking forward to hearing from you and helping you find your ideal property!
-          </p>
-
-        </td>
-      </tr>
-
-      <!-- DIVIDER -->
-      <tr><td style="padding:0 40px;"><div style="height:1px;background:#eeeeee;"></div></td></tr>
-
-      <!-- SIGNATURE BLOCK -->
-      <tr>
-        <td style="padding:28px 40px 0;background:#ffffff;">
-
-          <!-- "Best Regards, / Name" -->
-          <p style="font-family:Arial,sans-serif;font-size:13px;color:#1a1a1a;margin:0 0 2px 0;line-height:1.5;">Best Regards,</p>
-          <!-- Bold name -->
-          <div style="font-size:22px;font-family:Arial,sans-serif;font-weight:bold;color:#1a1a1a;margin:0 0 4px 0;">Nayan Team</div>
-          <!-- Role -->
-          <div style="font-size:15px;font-family:Arial,sans-serif;color:#555555;margin:0 0 14px 0;">Real Estate Consultants</div>
-
-          <!-- Logo -->
-          <div style="margin:0 0 16px 0;">
-            <img src="${LOGO_URL}" width="180" alt="Nayan" style="display:block;width:180px;max-width:180px;background:#111111;padding:10px 16px;border-radius:3px;" />
-          </div>
-
-          <!-- Address | Email + Phone two-column -->
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:0 0 14px 0;">
+        <td align="center" style="padding: 28px 12px">
+          <table
+            class="container"
+            role="presentation"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+            width="620"
+            style="
+              max-width: 620px;
+              width: 100%;
+              background: #ffffff;
+              border-radius: 4px;
+              overflow: hidden;
+              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+            "
+          >
+            <!-- TOP BAR -->
             <tr>
-              <!-- Address -->
-              <td style="vertical-align:top;padding-right:16px;font-size:12px;font-family:Arial,sans-serif;color:#333333;line-height:1.4;width:240px;">
-                Riyadh, Kingdom of Saudi Arabia
-              </td>
-              <!-- Divider column (empty, acts as visual gap) -->
-              <td style="vertical-align:top;width:15px;padding-right:15px;padding-left:15px;"></td>
-              <!-- Email + Phone -->
-              <td style="vertical-align:top;">
-                <!-- Email row -->
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:10px;">
-                  <tr>
-                    <td style="vertical-align:middle;width:23px;padding-right:5px;">
-                      <img src="https://res.cloudinary.com/du8hedlvt/image/upload/v1772110966/mail-svgrepo-com_dnhpu4.png" width="18" height="18" alt="Email" style="display:block;width:18px;" />
-                    </td>
-                    <td style="vertical-align:middle;font-size:12px;font-family:Arial,sans-serif;color:#1a1a1a;">
-                      <a href="mailto:admin@nayan.sa" style="color:#1a1a1a;text-decoration:none;">admin@nayan.sa</a>
-                    </td>
-                  </tr>
-                </table>
-                <!-- Phone row -->
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                  <tr>
-                    <td style="vertical-align:middle;width:23px;padding-right:5px;">
-                      <img src="https://res.cloudinary.com/du8hedlvt/image/upload/v1772110913/call-192-svgrepo-com_oii5og.png" width="18" height="18" alt="Phone" style="display:block;width:18px;" />
-                    </td>
-                    <td style="vertical-align:middle;font-size:12px;font-family:Arial,sans-serif;color:#1a1a1a;">
-                      <a href="tel:+966561291512" style="color:#1a1a1a;text-decoration:none;">+966 56 129 1512</a>
-                    </td>
-                  </tr>
-                </table>
+              <td
+                style="
+                  background: #111111;
+                  padding: 20px 32px;
+                  border-bottom: 3px solid #b8973e;
+                "
+              >
+                <img
+                  class="logo-img"
+                  src="https://i.postimg.cc/JzSBCw3g/logowhite.png"
+                  width="130"
+                  alt="Nayan"
+                  style="display: block; width: 130px; max-width: 130px"
+                />
               </td>
             </tr>
-          </table>
 
-          <!-- Social icons row -->
-         <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin:10px 0 8px 0;">
-  <tr style="font-size:0;line-height:0;">
+            <!-- MAIN CONTENT -->
+            <tr>
+              <td
+                class="content-pad"
+                style="padding: 36px 40px 28px; background: #ffffff"
+              >
+                <p
+                  style="
+                    font-family: &quot;Jost&quot;, Arial, sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #1a1a1a;
+                    margin: 0 0 20px 0;
+                    line-height: 1.5;
+                  "
+                >
+                  Hi <strong>${name}</strong>, great to meet you!
+                </p>
 
-    <!-- WhatsApp -->
-    <td style="padding-right:8px;">
-      <a href="https://wa.me/966561291512" style="text-decoration:none;display:inline-block;">
-        <img 
-          src="https://res.cloudinary.com/du8hedlvt/image/upload/v1772110783/whatsapp-svgrepo-com_iczebb.png"
-          width="30"
-          height="30"
-          alt="WhatsApp"
-          style="display:block;width:30px;height:30px;border:0;"
-        />
-      </a>
-    </td>
+                <p
+                  style="
+                    font-family: &quot;Jost&quot;, Arial, sans-serif;
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: #333333;
+                    margin: 0 0 16px 0;
+                    line-height: 1.8;
+                  "
+                >
+                  Thank you for your interest in
+                  <strong style="font-weight: 500; color: #1a1a1a"
+                    >Nayan Real Estate</strong
+                  >. We specialize in premium residential and commercial
+                  properties designed for comfort, investment growth, and
+                  long-term value — and we'd love to help you find the perfect
+                  opportunity.
+                </p>
 
-    <!-- Instagram -->
-    <td style="padding-right:8px;">
-      <a href="https://www.instagram.com/nayan_ltd?igsh=cm5rYnhzcmhnaW4z" style="text-decoration:none;display:inline-block;">
-        <img 
-          src="https://res.cloudinary.com/du8hedlvt/image/upload/v1772111090/insta-svgrepo-com_pshgp4.png"
-          width="30"
-          height="30"
-          alt="Instagram"
-          style="display:block;width:30px;height:30px;border:0;"
-        />
-      </a>
-    </td>
+                <p
+                  style="
+                    font-family: &quot;Jost&quot;, Arial, sans-serif;
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: #333333;
+                    margin: 0 0 16px 0;
+                    line-height: 1.8;
+                  "
+                >
+                  Whether you're searching for a modern apartment, luxury villa,
+                  or commercial space, our team is ready to guide you every step
+                  of the way.
+                </p>
 
-    <!-- Facebook -->
-    <td style="padding-right:8px;">
-      <a href="https://www.facebook.com/share/1XKcBY1sXC/" style="text-decoration:none;display:inline-block;">
-        <img 
-          src="https://res.cloudinary.com/du8hedlvt/image/upload/v1772111027/facebook-176-svgrepo-com_dgl1gx.png"
-          width="30"
-          height="30"
-          alt="Facebook"
-          style="display:block;width:30px;height:30px;border:0;"
-        />
-      </a>
-    </td>
+                <p
+                  style="
+                    font-family: &quot;Jost&quot;, Arial, sans-serif;
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: #333333;
+                    margin: 0 0 28px 0;
+                    line-height: 1.8;
+                  "
+                >
+                  To help us match you with the perfect property, please let us
+                  know:
+                </p>
 
-    <!-- LinkedIn -->
-    <td>
-      <a href="https://www.linkedin.com/company/mrac-nayan" style="text-decoration:none;display:inline-block;">
-        <img 
-          src="https://res.cloudinary.com/du8hedlvt/image/upload/v1772111037/linkedin-svgrepo-com_sqodlk.png"
-          width="50"
-          height="50"
-          alt="LinkedIn"
-          style="display:block;width:50px;height:50px;border:0;"
-          
-        />
-      </a>
-    </td>
+                <!-- Checklist -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 28px"
+                >
+                  <tr>
+                    <td style="padding: 0 0 10px 0">
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            style="
+                              width: 22px;
+                              vertical-align: top;
+                              padding-top: 1px;
+                            "
+                          >
+                            <div
+                              style="
+                                width: 18px;
+                                height: 18px;
+                                background: #b8973e;
+                                border-radius: 50%;
+                                text-align: center;
+                                line-height: 18px;
+                                font-family: Arial;
+                                font-size: 11px;
+                                color: #ffffff;
+                                font-weight: bold;
+                              "
+                            >
+                              &#10003;
+                            </div>
+                          </td>
+                          <td
+                            style="
+                              padding-left: 10px;
+                              font-family: &quot;Jost&quot;, Arial, sans-serif;
+                              font-size: 14px;
+                              font-weight: 300;
+                              color: #333333;
+                              line-height: 1.6;
+                            "
+                          >
+                            Preferred property type (apartment, villa,
+                            commercial)?
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0 0 10px 0">
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            style="
+                              width: 22px;
+                              vertical-align: top;
+                              padding-top: 1px;
+                            "
+                          >
+                            <div
+                              style="
+                                width: 18px;
+                                height: 18px;
+                                background: #b8973e;
+                                border-radius: 50%;
+                                text-align: center;
+                                line-height: 18px;
+                                font-family: Arial;
+                                font-size: 11px;
+                                color: #ffffff;
+                                font-weight: bold;
+                              "
+                            >
+                              &#10003;
+                            </div>
+                          </td>
+                          <td
+                            style="
+                              padding-left: 10px;
+                              font-family: &quot;Jost&quot;, Arial, sans-serif;
+                              font-size: 14px;
+                              font-weight: 300;
+                              color: #333333;
+                              line-height: 1.6;
+                            "
+                          >
+                            Intended use — personal living or investment?
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0 0 10px 0">
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            style="
+                              width: 22px;
+                              vertical-align: top;
+                              padding-top: 1px;
+                            "
+                          >
+                            <div
+                              style="
+                                width: 18px;
+                                height: 18px;
+                                background: #b8973e;
+                                border-radius: 50%;
+                                text-align: center;
+                                line-height: 18px;
+                                font-family: Arial;
+                                font-size: 11px;
+                                color: #ffffff;
+                                font-weight: bold;
+                              "
+                            >
+                              &#10003;
+                            </div>
+                          </td>
+                          <td
+                            style="
+                              padding-left: 10px;
+                              font-family: &quot;Jost&quot;, Arial, sans-serif;
+                              font-size: 14px;
+                              font-weight: 300;
+                              color: #333333;
+                              line-height: 1.6;
+                            "
+                          >
+                            Target budget?
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0 0 0 0">
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            style="
+                              width: 22px;
+                              vertical-align: top;
+                              padding-top: 1px;
+                            "
+                          >
+                            <div
+                              style="
+                                width: 18px;
+                                height: 18px;
+                                background: #b8973e;
+                                border-radius: 50%;
+                                text-align: center;
+                                line-height: 18px;
+                                font-family: Arial;
+                                font-size: 11px;
+                                color: #ffffff;
+                                font-weight: bold;
+                              "
+                            >
+                              &#10003;
+                            </div>
+                          </td>
+                          <td
+                            style="
+                              padding-left: 10px;
+                              font-family: &quot;Jost&quot;, Arial, sans-serif;
+                              font-size: 14px;
+                              font-weight: 300;
+                              color: #333333;
+                              line-height: 1.6;
+                            "
+                          >
+                            Any must-haves for your next property?
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
 
-  </tr>
-</table>
+                <p
+                  style="
+                    font-family: &quot;Jost&quot;, Arial, sans-serif;
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: #333333;
+                    margin: 0 0 8px 0;
+                    line-height: 1.8;
+                  "
+                >
+                  The fastest way to explore your options?
+                </p>
+                <p
+                  style="
+                    font-family: &quot;Jost&quot;, Arial, sans-serif;
+                    font-size: 15px;
+                    font-weight: 400;
+                    margin: 0 0 28px 0;
+                    line-height: 1.8;
+                  "
+                >
+                  <a
+                    href="https://www.nayan.sa"
+                    style="
+                      color: #b8973e;
+                      text-decoration: underline;
+                      font-weight: 500;
+                    "
+                    >Browse our latest properties &rarr;</a
+                  >
+                </p>
 
-          <!-- Website -->
-          <div style="font-size:14px;font-family:Arial,sans-serif;padding:5px 0 0 0;">
-            <a href="https://www.nayan.sa" style="color:#1a1a1a;text-decoration:none;">www.nayan.sa</a>
-          </div>
+                <p
+                  style="
+                    font-family: &quot;Jost&quot;, Arial, sans-serif;
+                    font-size: 15px;
+                    font-weight: 300;
+                    color: #333333;
+                    margin: 0;
+                    line-height: 1.8;
+                  "
+                >
+                  Looking forward to hearing from you and helping you find your
+                  ideal property!
+                </p>
+              </td>
+            </tr>
 
-        </td>
-      </tr>
+            <!-- DIVIDER -->
+            <tr>
+              <td style="padding: 0 40px">
+                <div style="height: 1px; background: #eeeeee"></div>
+              </td>
+            </tr>
 
-      <!-- GOLD BAR -->
-      <tr>
-        <td style="padding:10px 0 0 0;">
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-            <tr style="background-color:#b8973e;">
-              <td style="padding:7px 40px;text-align:right;">
-                <div style="font-size:14px;font-family:Arial,sans-serif;font-weight:bold;color:#ffffff;text-align:right;">
-                  RIYADH &nbsp;|&nbsp; JEDDAH &nbsp;|&nbsp; KINGDOM OF SAUDI ARABIA
+            <!-- SIGNATURE BLOCK -->
+            <tr>
+              <td style="padding: 28px 40px 0; background: #ffffff">
+                <!-- "Best Regards, / Name" -->
+                <p
+                  style="
+                    font-family: Arial, sans-serif;
+                    font-size: 13px;
+                    color: #1a1a1a;
+                    margin: 0 0 2px 0;
+                    line-height: 1.5;
+                  "
+                >
+                  Best Regards,
+                </p>
+                <!-- Bold name -->
+                <div
+                  style="
+                    font-size: 22px;
+                    font-family: Arial, sans-serif;
+                    font-weight: bold;
+                    color: #1a1a1a;
+                    margin: 0 0 4px 0;
+                  "
+                >
+                  Nayan Team
+                </div>
+                <!-- Role -->
+                <div
+                  style="
+                    font-size: 15px;
+                    font-family: Arial, sans-serif;
+                    color: #555555;
+                    margin: 0 0 14px 0;
+                  "
+                >
+                  Real Estate Consultants
+                </div>
+
+                <!-- Logo -->
+                <div style="margin: 0 0 16px 0">
+                  <img
+                    src="https://i.postimg.cc/JzSBCw3g/logowhite.png"
+                    width="180"
+                    alt="Nayan"
+                    style="
+                      display: block;
+                      width: 180px;
+                      max-width: 180px;
+                      background: #111111;
+                      padding: 10px 16px;
+                      border-radius: 3px;
+                    "
+                  />
+                </div>
+
+                <!-- Address | Email + Phone two-column -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  style="margin: 0 0 14px 0"
+                >
+                  <tr>
+                    <!-- Address -->
+                    <td
+                      style="
+                        vertical-align: top;
+                        padding-right: 16px;
+                        font-size: 12px;
+                        font-family: Arial, sans-serif;
+                        color: #333333;
+                        line-height: 1.4;
+                        width: 240px;
+                      "
+                    >
+                      Riyadh, Kingdom of Saudi Arabia
+                    </td>
+                    <!-- Divider column (empty, acts as visual gap) -->
+                    <td
+                      style="
+                        vertical-align: top;
+                        width: 15px;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                      "
+                    ></td>
+                    <!-- Email + Phone -->
+                    <td style="vertical-align: top">
+                      <!-- Email row -->
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                        style="margin-bottom: 10px"
+                      >
+                        <tr>
+                          <td
+                            style="
+                              vertical-align: middle;
+                              width: 23px;
+                              padding-right: 5px;
+                            "
+                          >
+                            <img
+                              src="https://img.icons8.com/?size=512w&id=86840&format=png"
+                              width="18"
+                              height="18"
+                              alt="Email"
+                              style="display: block; width: 18px"
+                            />
+                          </td>
+                          <td
+                            style="
+                              vertical-align: middle;
+                              font-size: 12px;
+                              font-family: Arial, sans-serif;
+                              color: #1a1a1a;
+                            "
+                          >
+                            <a
+                              href="mailto:admin@nayan.sa"
+                              style="color: #1a1a1a; text-decoration: none"
+                              >admin@nayan.sa</a
+                            >
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- Phone row -->
+                      <table
+                        role="presentation"
+                        cellspacing="0"
+                        cellpadding="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            style="
+                              vertical-align: middle;
+                              width: 23px;
+                              padding-right: 5px;
+                            "
+                          >
+                            <img
+                              src="https://img.icons8.com/?size=100&id=78382&format=png&color=000000"
+                              width="18"
+                              height="18"
+                              alt="Phone"
+                              style="display: block; width: 18px"
+                            />
+                          </td>
+                          <td
+                            style="
+                              vertical-align: middle;
+                              font-size: 12px;
+                              font-family: Arial, sans-serif;
+                              color: #1a1a1a;
+                            "
+                          >
+                            <a
+                              href="tel:+966561291512"
+                              style="color: #1a1a1a; text-decoration: none"
+                              >+966 56 129 1512</a
+                            >
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Social icons row -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  style="margin: 10px 0 8px 0"
+                >
+                  <tr style="font-size: 0; line-height: 0">
+                    <!-- WhatsApp -->
+                    <td style="padding-right: 8px">
+                      <a
+                        href="https://wa.me/966561291512"
+                        style="text-decoration: none; display: inline-block"
+                      >
+                        <img
+                          src="https://img.icons8.com/?size=100&id=16733&format=png&color=000000"
+                          width="30"
+                          height="30"
+                          alt="WhatsApp"
+                          style="
+                            display: block;
+                            width: 30px;
+                            height: 30px;
+                            border: 0;
+                          "
+                        />
+                      </a>
+                    </td>
+
+                    <!-- Instagram -->
+                    <td style="padding-right: 8px">
+                      <a
+                        href="https://www.instagram.com/nayan_ltd?igsh=cm5rYnhzcmhnaW4z"
+                        style="text-decoration: none; display: inline-block"
+                      >
+                        <img
+                          src="https://img.icons8.com/?size=100&id=85140&format=png&color=000000"
+                          width="30"
+                          height="30"
+                          alt="Instagram"
+                          style="
+                            display: block;
+                            width: 30px;
+                            height: 30px;
+                            border: 0;
+                          "
+                        />
+                      </a>
+                    </td>
+
+                    <!-- Facebook -->
+                    <td style="padding-right: 8px">
+                      <a
+                        href="https://www.facebook.com/share/1XKcBY1sXC/"
+                        style="text-decoration: none; display: inline-block"
+                      >
+                        <img
+                          src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000"
+                          width="30"
+                          height="30"
+                          alt="Facebook"
+                          style="
+                            display: block;
+                            width: 30px;
+                            height: 30px;
+                            border: 0;
+                          "
+                        />
+                      </a>
+                    </td>
+
+                    <!-- LinkedIn -->
+                    <td>
+                      <a
+                        href="https://www.linkedin.com/company/mrac-nayan"
+                        style="text-decoration: none; display: inline-block"
+                      >
+                        <img
+                          src="https://img.icons8.com/?size=512&id=98960&format=png"
+                          width="30"
+                          height="30"
+                          alt="LinkedIn"
+                          style="
+                            display: block;
+                            width: 30px;
+                            height: 30px;
+                            border: 0;
+                          "
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Website -->
+                <div
+                  style="
+                    font-size: 14px;
+                    font-family: Arial, sans-serif;
+                    padding: 5px 0 0 0;
+                  "
+                >
+                  <a
+                    href="https://www.nayan.sa"
+                    style="color: #1a1a1a; text-decoration: none"
+                    >www.nayan.sa</a
+                  >
                 </div>
               </td>
             </tr>
+
+            <!-- GOLD BAR -->
+            <tr>
+              <td style="padding: 10px 0 0 0">
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                >
+                  <tr style="background-color: #b8973e">
+                    <td style="padding: 7px 40px; text-align: right">
+                      <div
+                        style="
+                          font-size: 14px;
+                          font-family: Arial, sans-serif;
+                          font-weight: bold;
+                          color: #ffffff;
+                          text-align: right;
+                        "
+                      >
+                        RIYADH &nbsp;|&nbsp; JEDDAH &nbsp;|&nbsp; KINGDOM OF
+                        SAUDI ARABIA
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- DISCLAIMER -->
+            <tr>
+              <td style="padding: 12px 40px 24px; background: #ffffff">
+                <p
+                  style="
+                    font-size: 12px;
+                    font-family: Arial, sans-serif;
+                    color: #555555;
+                    margin: 0;
+                    line-height: 1.4;
+                  "
+                >
+                  This e-mail and its attachments are confidential and intended
+                  for the above-named recipient only. If you are not the
+                  intended recipient, you are not authorised to retain, read,
+                  copy or distribute this message or any part of it. If you
+                  receive this e-mail in error, please notify the sender and
+                  delete it immediately. Thank you.
+                </p>
+              </td>
+            </tr>
           </table>
         </td>
       </tr>
-
-      <!-- DISCLAIMER -->
-      <tr>
-        <td style="padding:12px 40px 24px;background:#ffffff;">
-          <p style="font-size:12px;font-family:Arial,sans-serif;color:#555555;margin:0;line-height:1.4;">
-            This e-mail and its attachments are confidential and intended for the above-named recipient only. If you are not the intended recipient, you are not authorised to retain, read, copy or distribute this message or any part of it. If you receive this e-mail in error, please notify the sender and delete it immediately. Thank you.
-          </p>
-        </td>
-      </tr>
-
     </table>
-  </td></tr>
-</table>
-</body>
-</html>`;
+  </body>
+</html>
+`;
 }
 
 /* ================================================================
@@ -734,7 +1249,10 @@ export async function POST(req: Request) {
     }
 
     if (!name || !email || !message) {
-      return Response.json({ error: 'Missing required fields' }, { status: 400 });
+      return Response.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
     }
 
     const isArabic = locale === 'ar';

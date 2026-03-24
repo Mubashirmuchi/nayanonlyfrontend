@@ -191,7 +191,7 @@ export default function ContactSection({ locale }: { locale: string }) {
         <div>
           <div className="relative w-full h-[400px] mb-8">
             <Image
-              src="https://res.cloudinary.com/du8hedlvt/image/upload/v1771440343/contactpage_n284nq.png"
+              src="/contactpage_n284nq.webp"
               alt="Interior"
               fill
               className="object-cover rounded-md"

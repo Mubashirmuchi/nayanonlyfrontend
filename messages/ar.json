@@ -137,25 +137,25 @@
         {
           "authorName": "ريان أحمد",
           "authorRole": "عميل موثّق",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437289/testimonial1_gzaunc.png",
+          "image": "/testimonial2.png",
           "authorDesc": "احترافية نيــــان وشفافيتها واهتمامها بالتفاصيل جعلت العملية بأكملها سلسة وموثوقة. تم تسليم المشروع بجودة عالية كما هو متوقع."
         },
         {
           "authorName": "خالد",
           "authorRole": "مستشار",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
+          "image": "/testimonial3.png",
           "authorDesc": "احترافية نيــــان وشفافيتها واهتمامها بالتفاصيل جعلت العملية بأكملها سلسة وموثوقة. تم تسليم المشروع بجودة عالية كما هو متوقع."
         },
         {
           "authorName": "أبو حسن",
           "authorRole": "عميل",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437478/testimonial4_wvc3dr.png",
+          "image": "/testimonial1.png",
           "authorDesc": "احترافية نيــــان وشفافيتها واهتمامها بالتفاصيل جعلت العملية بأكملها سلسة وموثوقة. تم تسليم المشروع بجودة عالية كما هو متوقع."
         },
         {
           "authorName": "أمير",
           "authorRole": "عميل موثّق",
-          "image": "https://res.cloudinary.com/du8hedlvt/image/upload/v1771437290/testimonial2_xs7fc6.png",
+          "image": "/testimonial2.png",
           "authorDesc": "احترافية نيــــان وشفافيتها واهتمامها بالتفاصيل جعلت العملية بأكملها سلسة وموثوقة. تم تسليم المشروع بجودة عالية كما هو متوقع."
         }
       ]

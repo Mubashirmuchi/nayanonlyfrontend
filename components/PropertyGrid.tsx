@@ -25,14 +25,13 @@ type Property = {
 
 type FilterType = {
   title: string;
-  value: string
-}
+  value: string;
+};
 
 type FeaturedProjectsProps = {
   properties: Property[];
 };
-export default function PropertiesPage ({ properties }: FeaturedProjectsProps)  {
-
+export default function PropertiesPage({ properties }: FeaturedProjectsProps) {
   const t = useTranslations('propertyPage');
 
   const locale = useLocale();
@@ -43,7 +42,6 @@ export default function PropertiesPage ({ properties }: FeaturedProjectsProps)  
     active === 'all'
       ? properties
       : properties.filter((item) => item.category.toLowerCase() === active);
-
 
   return (
     <section className="bg-[#f4f1ec] pb-20">
@@ -69,13 +67,13 @@ export default function PropertiesPage ({ properties }: FeaturedProjectsProps)  
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-{filtered.map((property) => (
-  <PropertyPageCard
-    key={property.id}
-    property={property}
-    locale={locale as 'en' | 'ar'}
-  />
-))}
+        {filtered.map((property) => (
+          <PropertyPageCard
+            key={property.id}
+            property={property}
+            locale={locale as 'en' | 'ar'}
+          />
+        ))}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 type LocalizedField = {
   en: string;
@@ -19,14 +19,13 @@ type Property = {
 
 type Props = {
   property: Property;
-  locale: "en" | "ar";
+  locale: 'en' | 'ar';
 };
 
 const PropertyPageCard = ({ property, locale }: Props) => {
   return (
     <Link href={`/properties/${property.slug}`}>
       <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition duration-300">
-
         {/* Image */}
         <div className="relative h-64 overflow-hidden">
           <Image
@@ -43,8 +42,7 @@ const PropertyPageCard = ({ property, locale }: Props) => {
         </div>
 
         {/* Content */}
-        <div className="p-6">
-
+        <div className="p-6 h-[146px]">
           {/* Title + Area */}
           <div className="flex justify-between items-start mb-1">
             <h3 className="text-lg font-semibold leading-snug">
@@ -64,7 +62,6 @@ const PropertyPageCard = ({ property, locale }: Props) => {
           <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
             {property.description[locale]}
           </p>
-
         </div>
       </div>
     </Link>

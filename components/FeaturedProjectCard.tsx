@@ -1,6 +1,6 @@
-import { IconMapPin } from "@tabler/icons-react";
-import Image from "next/image";
-import Link from "next/link";
+import { IconMapPin } from '@tabler/icons-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface PropertyCardProps {
   title: string;
@@ -13,20 +13,16 @@ interface PropertyCardProps {
 }
 
 export default function PropertyCard({
-    
   title,
   area,
   features,
   location,
   image,
   status,
-  href = "#",
+  href = '#',
 }: PropertyCardProps) {
   return (
-    <Link
-      href={href}
-      className="group relative block overflow-hidden bg-black"
-    >
+    <Link href={href} className="group relative block overflow-hidden bg-black">
       {/* Image */}
       <div className="relative aspect-[4/5] overflow-hidden">
         <Image
@@ -44,37 +40,34 @@ export default function PropertyCard({
         )}
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent" />
       </div>
 
       {/* Bottom Content */}
-    {/* Bottom Content */}
-<div className="absolute bottom-0 left-0 w-full p-5 sm:p-6 text-white">
+      {/* Bottom Content */}
+      <div className="absolute bottom-0 left-0 w-full p-5 sm:p-6 text-white">
+        {/* Title + Area */}
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-lg sm:text-xl font-semibold leading-snug">
+            {title}
+          </h3>
 
-  {/* Title + Area */}
-  <div className="flex justify-between items-start mb-2">
-    <h3 className="text-lg sm:text-xl font-semibold leading-snug">
-      {title}
-    </h3>
+          <span className="text-sm sm:text-base opacity-90 whitespace-nowrap">
+            {area}
+          </span>
+        </div>
 
-    <span className="text-sm sm:text-base opacity-90 whitespace-nowrap">
-      {area}
-    </span>
-  </div>
+        {/* Features */}
+        <div className="text-sm opacity-85 mb-2 leading-relaxed">
+          {features}
+        </div>
 
-  {/* Features */}
-  <div className="text-sm opacity-85 mb-2 leading-relaxed">
-    {features}
-  </div>
-
-  {/* Location */}
-  <div className="flex items-center gap-2 text-xs sm:text-sm opacity-80">
-    <IconMapPin size={14} />
-    {location}
-  </div>
-
-</div>
+        {/* Location */}
+        <div className="flex items-center gap-2 text-xs sm:text-sm opacity-80">
+          <IconMapPin size={14} />
+          {location}
+        </div>
+      </div>
     </Link>
   );
 }
-

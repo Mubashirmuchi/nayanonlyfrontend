@@ -6,7 +6,7 @@ export function OrganizationJsonLd({ locale }: { locale: string }) {
     '@type': 'RealEstateAgent',
     name: 'Nayan',
     url: `https://nayan.sa/${locale}`,
-    logo: 'https://res.cloudinary.com/du8hedlvt/image/upload/v1771433276/aboutnayan_msfwqt.png',
+    logo: 'https://i.postimg.cc/JzSBCw3g/logowhite.png',
     description: isArabic
       ? 'شركة نايان للتطوير العقاري في المملكة العربية السعودية.'
       : 'Nayan is a premium real estate development company in Saudi Arabia.',
