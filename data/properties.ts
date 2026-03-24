@@ -189,7 +189,7 @@ export const properties1 = [
       ar: 'مثالي للعائلات.',
     },
     developer: 'NAYAN Real Estate',
-    image: '/nayan32.jpeg',
+    image: '/nayan31.jpeg',
   },
 ];
 
