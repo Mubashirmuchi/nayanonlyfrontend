@@ -25,7 +25,10 @@ export default function ServiceBlock() {
   };
 
   return (
-    <section id='services' className={`bg-[#C08E4633] py-16 md:py-24 flex flex-col gap-10  md:gap-18 `}>
+    <section
+      id="services"
+      className={`bg-[#f1efef] py-16 md:py-24 flex flex-col gap-10  md:gap-18 `}
+    >
       {/* Header */}
       <div className="container mx-auto px-4 text-center max-w-2xl ">
         <div className="inline-block border border-gray-400 rounded-full px-4 py-1 text-sm tracking-wide mb-4">
@@ -49,7 +52,7 @@ export default function ServiceBlock() {
               key={index}
               className="flex flex-col items-center text-center px-4"
             >
-              <div className="w-14 h-14 rounded-full bg-[#C08E46] flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-[#935b40] flex items-center justify-center mb-4">
                 {Icon && <Icon size={28} color="white" />}
               </div>
               <h3 className="text-lg font-semibold mb-2">{service.title}</h3>

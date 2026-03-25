@@ -140,25 +140,25 @@
         {
           "authorName": "Rayan Ahmed",
           "authorRole": "Verified Client",
-          "image": "/testimonial1.png",
+          "image": "/testimonial1.jpg",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Khalid",
           "authorRole": "Consultant",
-          "image": "/testimonial3.png",
+          "image": "/testimonial2.jpg",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Abu Hassan",
           "authorRole": "Client",
-          "image": "/testimonial2.png",
+          "image": "/testimonial3.jpg",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         },
         {
           "authorName": "Ameer",
           "authorRole": "Verified Client",
-          "image": "/testimonial2.png",
+          "image": "/testimonial4.jpg",
           "authorDesc": "NAYAN’s professionalism, transparency, and attention to detail made the entire process efficient and reliable. The project was delivered to a high standard, exactly as expected."
         }
       ]
@@ -253,17 +253,27 @@
         "title": "All",
         "value": "all"
       },
+
       {
-        "title": "Villas",
-        "value": "villas"
+        "title": "Appartments",
+        "value": "appartments"
       },
       {
-        "title": "Resort",
-        "value": "resort"
+        "title": "Flat",
+        "value": "flat"
+      },
+
+      {
+        "title": "Town House",
+        "value": "townhouse"
       },
       {
-        "title": "Duplex",
-        "value": "duplex"
+        "title": "Penth house",
+        "value": "penthouse"
+      },
+      {
+        "title": "Offices",
+        "value": "offices"
       }
     ],
     "getinTouch": "Get In Touch"

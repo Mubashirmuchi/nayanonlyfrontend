@@ -6,12 +6,11 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandYoutube,
-  
   IconMapPin,
 } from '@tabler/icons-react';
-import {  MailIcon, PhoneIcon } from 'lucide-react'
+import { MailIcon, PhoneIcon } from 'lucide-react';
 
-import MarqueeBlock from './Marquee';
+// import MarqueeBlock from './Marquee';
 import { useLocale } from 'next-intl';
 
 const Footer = () => {
@@ -43,14 +42,13 @@ const Footer = () => {
     },
   ];
 
-
   return (
     <footer className="bg-black text-white">
       {/* Top scrolling bar */}
 
-      <div className="bg-[#C08E46] text-white text-sm py-3 overflow-hidden whitespace-nowrap">
+      {/* <div className="bg-[#C08E46] text-white text-sm py-3 overflow-hidden whitespace-nowrap">
         <MarqueeBlock />
-      </div>
+      </div> */}
 
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -129,67 +127,59 @@ const Footer = () => {
         </div>
 
         {/* Contact */}
-      
-<div className="space-y-6">
 
-  {/* Email */}
-  <div className="space-y-2">
-    <h4 className="font-semibold">
-      {t('usefullinks.email')}
-    </h4>
+        <div className="space-y-6">
+          {/* Email */}
+          <div className="space-y-2">
+            <h4 className="font-semibold">{t('usefullinks.email')}</h4>
 
-    <a
-      dir="ltr"
-      href="mailto:admin@nayan.sa"
-      className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
+            <a
+              dir="ltr"
+              href="mailto:admin@nayan.sa"
+              className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
         ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
-    >
-      <MailIcon size={18} className="shrink-0" />
-      <span>admin@nayan.sa</span>
-    </a>
-  </div>
+            >
+              <MailIcon size={18} className="shrink-0" />
+              <span>admin@nayan.sa</span>
+            </a>
+          </div>
 
-  {/* Phone */}
-  <div className="space-y-2">
-    <h4 className="font-semibold">
-      {t('usefullinks.phone')}
-    </h4>
+          {/* Phone */}
+          <div className="space-y-2">
+            <h4 className="font-semibold">{t('usefullinks.phone')}</h4>
 
-    <a
-      dir="ltr"
-      href={`https://wa.me/966561291512?text=${message}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
+            <a
+              dir="ltr"
+              href={`https://wa.me/966561291512?text=${message}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
         ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
-    >
-      <PhoneIcon size={18} className="shrink-0" />
-      <span>  +966 56 129 1512</span>
-    </a>
-  </div>
+            >
+              <PhoneIcon size={18} className="shrink-0" />
+              <span> +966 56 129 1512</span>
+            </a>
+          </div>
 
-  {/* Address */}
-  <div className="space-y-2">
-    <h4 className="font-semibold">
-      {t('headquarters')}
-    </h4>
+          {/* Address */}
+          <div className="space-y-2">
+            <h4 className="font-semibold">{t('headquarters')}</h4>
 
-    <a
-      dir={ 'ltr'}
-      href="https://maps.app.goo.gl/nh7h5ykDu9TPRgHH7"
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`text-gray-400 text-sm flex items-start gap-3 hover:text-white transition
+            <a
+              dir={'ltr'}
+              href="https://maps.app.goo.gl/nh7h5ykDu9TPRgHH7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-gray-400 text-sm flex items-start gap-3 hover:text-white transition
         ${isArabic ? 'flex-row-reverse text-right' : 'text-left'}`}
-    >
-      <IconMapPin size={18} className="mt-1 shrink-0" />
-      <span className="leading-relaxed">
-        {t('headquartersAddress')}
-      </span>
-    </a>
-  </div>
-
-</div>
+            >
+              <IconMapPin size={18} className="mt-1 shrink-0" />
+              <span className="leading-relaxed">
+                {t('headquartersAddress')}
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Bottom bar */}

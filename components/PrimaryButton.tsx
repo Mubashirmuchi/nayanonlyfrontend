@@ -11,6 +11,8 @@ type PrimaryButtonProps = {
   icon?: React.ReactNode;
 };
 
+//     bg-[#b88944]
+
 const PrimaryButton = ({ text, href, className, icon }: PrimaryButtonProps) => {
   const content = (
     <Button
@@ -24,7 +26,7 @@ const PrimaryButton = ({ text, href, className, icon }: PrimaryButtonProps) => {
         pr-16
         text-base
         font-medium
-        bg-[#b88944]
+        bg-[#935b40]
         text-white
         hover:bg-[#a97b3d]
         `,

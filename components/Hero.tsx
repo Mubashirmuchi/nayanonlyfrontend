@@ -49,7 +49,7 @@ export default function Hero({}) {
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6 max-w-sm text-white text-center lg:text-left rtl:lg:text-right">
           <p className="text-base md:text-lg font-medium mb-4">{t('title')}</p>
 
-          <PrimaryButton href="/" text={t('cta')} />
+          <PrimaryButton href="/properties" text={t('cta')} />
         </div>
       </div>
     </section>

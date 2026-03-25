@@ -4,7 +4,7 @@ export const properties1 = [
     slug: 'almalqa-center',
     title: { en: 'Almalqa Center', ar: 'مركز الملقا' },
     status: { en: 'For Rent', ar: 'للإيجار' },
-    category: 'Commercial',
+    category: 'Offices',
     area: '18041.610 m²',
     location: {
       en: 'Riyadh, Saudi Arabia',
@@ -161,13 +161,13 @@ export const properties1 = [
     slug: 'nayan-32',
     title: { en: 'Nayan 32', ar: 'نايان ٣٢' },
     status: { en: 'For Sale', ar: 'للبيع' },
-    category: 'Villa',
+    category: 'Flat',
     area: '1200 m²',
-    location: { en: 'Al Narjis, Riyadh', ar: 'النرجس' },
+    location: { en: 'Al Araid, Riyadh', ar: 'النرجس' },
     coordinates: { lat: 24.82, lng: 46.68 },
     gallery: ['/nayan31.jpeg', '/nayan32n.png'],
     description: {
-      en: 'Contemporary duplex homes with spacious layouts.',
+      en: 'Contemporary duplex flats with spacious layouts.',
       ar: 'منازل دوبلكس عصرية بتصاميم واسعة.',
     },
     overview: {
@@ -175,7 +175,8 @@ export const properties1 = [
       ar: ['مساحات واسعة', 'تصميم معماري عصري'],
     },
     specifications: {
-      propertyType: { en: 'Duplex Villa', ar: 'فيلا دوبلكس' },
+      //
+      propertyType: { en: 'Flat', ar: 'فيلا دوبلكس' },
       totalUnits: '20 Units',
       parkingSpaces: 40,
       completionYear: 2024,

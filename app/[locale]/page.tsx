@@ -96,7 +96,7 @@ export default async function Home() {
       <FeaturedProjects categories={categories} properties={properties1} />
       <OurClients />
       <CoreValuesSection />
-      <RealEstateSection />
+      {/* <RealEstateSection /> */}
       <WhyChooseUS />
       <TestimonialsSwiper />
       <ConnectUs />

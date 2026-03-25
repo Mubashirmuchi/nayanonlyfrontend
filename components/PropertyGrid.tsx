@@ -55,7 +55,7 @@ export default function PropertiesPage({ properties }: FeaturedProjectsProps) {
                 className={clsx(
                   'px-5 py-2 rounded-full text-sm border duration-300 bg-white hover:bg-[#c69c5d] hover:text-white transition',
                   active === filter.value
-                    ? 'bg-[#c69c5d] text-white border-[#c69c5d]'
+                    ? ' bg-[#935b40] text-white border-[#c69c5d]'
                     : 'bg-white text-gray-600 border-gray-300 hover:bg-[#c69c5d] hover:text-white'
                 )}
               >

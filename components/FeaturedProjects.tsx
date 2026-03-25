@@ -41,7 +41,7 @@ const FeaturedProjects = ({
       : properties.filter((p) => p.category === activeFilter);
 
   return (
-    <section className={`py-16 md:py-24 bg-[#C08E4633]`}>
+    <section className={`py-16 md:py-24 bg-[#f1efef]`}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
@@ -69,8 +69,8 @@ const FeaturedProjects = ({
                     className={`px-5 py-2 rounded-full text-sm transition
                   ${
                     activeFilter === filter
-                      ? 'bg-[#C08E46] text-white'
-                      : 'bg-white text-gray-700 hover:bg-gray-300'
+                      ? 'bg-[#935b40] text-white'
+                      : 'bg-[#666766] text-white hover:bg-white/60'
                   }`}
                   >
                     {filter}
@@ -91,7 +91,7 @@ const FeaturedProjects = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProperties.map((property) => (
                 <PropertyCard
-                href={`/properties/${property.slug}`}
+                  href={`/properties/${property.slug}`}
                   key={property.id}
                   image={property.image}
                   title={property.title[locale as 'en' | 'ar']}

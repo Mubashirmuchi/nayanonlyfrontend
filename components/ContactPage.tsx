@@ -177,7 +177,7 @@ export default function ContactSection({ locale }: { locale: string }) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group inline-flex items-center gap-4 bg-[#C08E46] text-white px-6 py-3 rounded-full shadow-md hover:opacity-90 transition disabled:opacity-50"
+              className="group inline-flex items-center gap-4  bg-[#935b40] text-white px-6 py-3 rounded-full shadow-md hover:opacity-90 transition disabled:opacity-50"
             >
               {isSubmitting ? t('form.sending') : t('form.submit')}
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white">

@@ -7,7 +7,7 @@ export default function About() {
   const imgUrl = '/aboutnayan_msfwqt.webp';
   const t = useTranslations('homePage.about');
   return (
-    <section className="relative w-full py-12 lg:py-20 bg-[#C08E4633] px-4 md:px-8 lg:px-12">
+    <section className="relative w-full py-12 lg:py-20 bg-[#f1efef] px-4 md:px-8 lg:px-12">
       <div className="relative w-full h-125 lg:h-150 overflow-hidden rounded-2xl">
         {/* Background image */}
         <Image
