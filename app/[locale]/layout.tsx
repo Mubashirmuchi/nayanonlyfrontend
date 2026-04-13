@@ -23,6 +23,7 @@ const geistMono = Geist_Mono({
 
 import { Cairo } from 'next/font/google';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const cairo = Cairo({
   variable: '--font-arabic',
@@ -63,6 +64,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <NavbarComponent locale={locale} />
             {children}
             <Footer />
+            <WhatsAppButton />
           </AnimatePresence>
         </NextIntlClientProvider>
          <SpeedInsights />

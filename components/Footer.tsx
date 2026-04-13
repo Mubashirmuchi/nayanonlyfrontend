@@ -150,7 +150,7 @@ const Footer = () => {
 
             <a
               dir="ltr"
-              href={`https://wa.me/966561291512?text=${message}`}
+              href={`tel:+966561291512`}
               target="_blank"
               rel="noopener noreferrer"
               className={`text-gray-400 text-sm flex items-center gap-3 hover:text-white transition
