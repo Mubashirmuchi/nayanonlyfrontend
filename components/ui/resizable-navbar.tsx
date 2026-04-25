@@ -10,7 +10,13 @@ import { SidebarOpenIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import React, { useRef, useState, createContext, useContext } from 'react';
+import React, {
+  useRef,
+  useState,
+  createContext,
+  useContext,
+  useEffect,
+} from 'react';
 
 const NavbarVisibilityContext = createContext<boolean>(false);
 
@@ -78,7 +84,7 @@ export const Navbar = ({ children, className, forceVisible }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn('fixed inset-x-0 top-6 z-40 w-full ', className)}
+      className={cn('fixed inset-x-0 sm:top-6 top-0 z-40 w-full ', className)}
     >
       <NavbarVisibilityContext.Provider value={isVisible}>
         {React.Children.map(children, (child) =>
@@ -259,8 +265,6 @@ export const MobileNavMenu = ({
   );
 };
 
-
-
 export const MobileNavToggle = ({
   isOpen,
   onClick,
@@ -280,14 +284,21 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
-
+  const [logo, setLogoLoaded] = useState('/logoblack.png');
+  useEffect(() => {
+    if (isVisible) {
+      setLogoLoaded('/logoblack.png');
+    } else {
+      setLogoLoaded('/logowhite.png');
+    }
+  }, [isVisible]);
   return (
     <Link
       href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image
-        src={isVisible ? '/logoblack.png' : '/logowhite.png'}
+        src={logo}
         alt="logo"
         width={200}
         height={50}

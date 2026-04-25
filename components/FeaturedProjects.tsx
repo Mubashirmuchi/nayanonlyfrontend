@@ -6,6 +6,14 @@ import { useLocale } from 'next-intl';
 import PropertyCard from './FeaturedProjectCard';
 import { useState } from 'react';
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 type LocalizedField = {
   en: string;
   ar: string;
@@ -59,29 +67,61 @@ const FeaturedProjects = ({
         <section className=" py-16">
           <div className="max-w-7xl mx-auto px-6">
             {/* Top Bar */}
-            <div className="flex items-center justify-between mb-10">
-              {/* Filters */}
-              <div className="flex flex-wrap gap-3">
+
+            <div className="flex w-full items-center justify-between mb-10">
+              {/* Desktop Filters */}
+              <div className="hidden sm:flex flex-wrap gap-3">
                 {categories.map((filter, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveFilter(filter)}
                     className={`px-5 py-2 rounded-full text-sm transition
-                  ${
-                    activeFilter === filter
-                      ? 'bg-[#935b40] text-white'
-                      : 'bg-[#666766] text-white hover:bg-white/60'
-                  }`}
+        ${
+          activeFilter === filter
+            ? 'bg-[#935b40] text-white'
+            : 'bg-[#666766] text-white hover:bg-white/60 hover:text-black'
+        }`}
                   >
                     {filter}
                   </button>
                 ))}
               </div>
 
-              {/* View All */}
+              {/* Mobile Row */}
+              <div className="flex w-full sm:hidden items-center justify-between gap-3">
+                {/* Select */}
+                <Select>
+                  <SelectTrigger className="w-68.25">
+                    <SelectValue placeholder="Filter" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      {categories.map((filter, index) => (
+                        <SelectItem
+                          key={index}
+                          value={filter}
+                          onClick={() => setActiveFilter(filter)}
+                        >
+                          {filter}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+
+                {/* View All */}
+                <Link
+                  href="/properties"
+                  className="flex items-center gap-2 text-sm font-medium whitespace-nowrap"
+                >
+                  View All <IconArrowRight size={16} />
+                </Link>
+              </div>
+
+              {/* Desktop View All */}
               <Link
                 href="/properties"
-                className="flex items-center gap-2 text-sm font-medium hover:underline"
+                className="hidden sm:flex items-center gap-2 text-sm font-medium hover:underline"
               >
                 View All <IconArrowRight size={16} />
               </Link>
@@ -89,18 +129,24 @@ const FeaturedProjects = ({
 
             {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProperties.map((property) => (
-                <PropertyCard
-                  href={`/properties/${property.slug}`}
-                  key={property.id}
-                  image={property.image}
-                  title={property.title[locale as 'en' | 'ar']}
-                  features={property.description[locale as 'en' | 'ar']}
-                  location={property.location[locale as 'en' | 'ar']}
-                  status={property.status[locale as 'en' | 'ar']}
-                  area={property.area}
-                />
-              ))}
+              {filteredProperties.length === 0 ? (
+                <p className="text-center text-gray-500 col-span-full h-32 flex items-center justify-center">
+                  No properties found for this category.
+                </p>
+              ) : (
+                filteredProperties.map((property) => (
+                  <PropertyCard
+                    href={`/properties/${property.slug}`}
+                    key={property.id}
+                    image={property.image}
+                    title={property.title[locale as 'en' | 'ar']}
+                    features={property.description[locale as 'en' | 'ar']}
+                    location={property.location[locale as 'en' | 'ar']}
+                    status={property.status[locale as 'en' | 'ar']}
+                    area={property.area}
+                  />
+                ))
+              )}
             </div>
           </div>
         </section>
