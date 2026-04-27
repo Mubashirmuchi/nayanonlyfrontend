@@ -96,6 +96,49 @@
       "description": "Each project is planned and delivered with a focus on quality, functionality, and enduring value."
     },
 
+    "clientsandpartners": {
+      "label": "OUR CLIENTS AND PARTNERS",
+      "title": {
+        "title_part1": "Serving a Diverse",
+        "title_part2": "Community of",
+        "title_part3": "Investors and Partners"
+      },
+
+      "description": "We work with individual investors, corporations, and government entities, building relationships based on trust and transparency. Our diverse clientele includes executives, entrepreneurs, professionals, and international residents across the region.",
+      "values": [
+        {
+          "icon": "IconBulb",
+          "title": "Innovation",
+          "description": "Modern real estate solutions shaped by evolving market needs"
+        },
+        {
+          "icon": "IconCirclesRelation",
+          "title": "Transparency",
+          "description": "Clear, credible, and honest engagement at every stage"
+        },
+        {
+          "icon": "BadgeCheck",
+          "title": "Quality",
+          "description": "High standards across design, construction, and execution"
+        },
+        {
+          "icon": "Handshake",
+          "title": "Dedication",
+          "description": "Every project handled with care, commitment, and responsibility"
+        },
+        {
+          "icon": "IconRecycle",
+          "title": "Sustainability",
+          "description": "Responsible development that supports long-term urban growth"
+        },
+        {
+          "icon": "IconUserStar",
+          "title": "Client First",
+          "description": "Customer satisfaction placed at the center of every decision"
+        }
+      ]
+    },
+
     "whyChooseUS": {
       "label": "WHY CHOOSE US",
       "title": "Our Competitive Edge",
