@@ -3,6 +3,8 @@ import { properties1 } from '@/data/properties';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PageWrapper } from '@/components/PageWrapper';
+import PropertyGallery from '@/components/PropertyGallery';
+import ContactForm from '@/components/ContactFormInDetail';
 
 type Params = {
   params: {
@@ -14,19 +16,22 @@ type Params = {
 export default async function PropertyDetail({ params }: Params) {
   const { slug, locale } = await params;
   const currentLocale = locale as 'en' | 'ar';
-
   const property = properties1.find((item) => item.slug === slug);
-
   if (!property) notFound();
-
   const isArabic = currentLocale === 'ar';
+
+  // Build your image array — replace with real images from property data
+  const images = [
+    property.image || '/nayan31.webp',
+    property.image || '/nayan31.webp',
+    property.image || '/nayan31.webp',
+  ];
 
   return (
     <PageWrapper>
       <main dir={isArabic ? 'rtl' : 'ltr'}>
         <section className="bg-[#f4f1ec] py-20 pt-32 px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Back */}
             <Link
               href={`/${locale}`}
               className="text-sm text-gray-500 mb-8 inline-block hover:underline"
@@ -34,36 +39,11 @@ export default async function PropertyDetail({ params }: Params) {
               {isArabic ? 'العودة' : '← Back'}
             </Link>
 
-            {/* ================= GALLERY ================= */}
-            <div className="grid md:grid-cols-3 gap-6 mb-16">
-              <div className="relative md:col-span-2 h-[450px]">
-                <Image
-                  src={property.image || '/nayan31.webp'}
-                  alt={property.title[currentLocale]}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
-
-              <div className="grid gap-6">
-                <div className="relative h-[215px]">
-                  <Image
-                    src={property.image || '/nayan31.webp'}
-                    alt=""
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <div className="relative h-[215px]">
-                  <Image
-                    src={property.image || '/nayan31.webp'}
-                    alt=""
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-            </div>
+            {/* ===== GALLERY — client component ===== */}
+            <PropertyGallery
+              images={images}
+              alt={property.title[currentLocale]}
+            />
 
             {/* ================= TITLE SECTION ================= */}
             <div className="grid md:grid-cols-2 gap-16 mb-20">
@@ -171,32 +151,14 @@ export default async function PropertyDetail({ params }: Params) {
                     ? 'ابدأ رحلتك معنا'
                     : 'Begin your journey with NAYAN'}
                 </h2>
-
-                <form className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder={isArabic ? 'الاسم' : 'Name'}
-                    className="w-full p-3 border rounded-md"
-                  />
-
-                  <input
-                    type="email"
-                    placeholder={isArabic ? 'البريد الإلكتروني' : 'Email'}
-                    className="w-full p-3 border rounded-md"
-                  />
-
-                  <textarea
-                    placeholder={isArabic ? 'رسالتك' : 'Message'}
-                    className="w-full p-3 border rounded-md"
-                  />
-
-                  <button className="bg-[#C08E46] text-white px-6 py-3 rounded-md hover:opacity-90 transition">
-                    {isArabic ? 'إرسال' : 'Send Message'}
-                  </button>
-                </form>
+                <ContactForm
+                  isArabic={isArabic}
+                  propertyTitle={property.title[currentLocale]}
+                />
               </div>
 
-              <div className="relative h-[400px]">
+              {/* Contact section image — hide on mobile */}
+              <div className="relative h-[400px] hidden md:block">
                 <Image
                   src={property.image || '/nayan31.webp'}
                   alt=""
