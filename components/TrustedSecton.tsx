@@ -8,7 +8,7 @@ const RealEstateSection = () => {
             label: 'MOST LOVED ONE',
             date: 'Nov 17, 2026',
             location: 'Saudi',
-            image: '/heroimage.png',
+            image: '/heroimage.webp',
             size: 'large', // First one is large
         },
         {
@@ -17,7 +17,7 @@ const RealEstateSection = () => {
             label: 'MOST LOVED ONE',
             date: 'Nov 17, 2026',
             location: 'Qatar',
-            image: '/image3.jpeg',
+            image: '/image3.webp',
             size: 'small', // Second one is small
         },
         {
@@ -26,7 +26,7 @@ const RealEstateSection = () => {
             label: 'MOST LOVED ONE',
             date: 'Nov 17, 2026',
             location: 'Saudi',
-            image: '/frame.jpeg',
+            image: '/frame.webp',
             size: 'large', // Third one is large
         },
         {
@@ -35,7 +35,7 @@ const RealEstateSection = () => {
             label: 'MOST LOVED ONE',
             date: 'Nov 17, 2026',
             location: 'Qatar',
-            image: '/frame.png',
+            image: '/frame.webp',
             size: 'small', // Fourth one is small
         },
     ];

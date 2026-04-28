@@ -8,7 +8,7 @@ const OurServices = () => {
     <section className="relative w-full  flex items-center justify-center min-h-3/6 py-24">
       {/* Background Image */}
       <Image
-        src="/frame.jpeg"
+        src="/frame.webp"
         alt="Our Services"
         fill
         className="object-cover"

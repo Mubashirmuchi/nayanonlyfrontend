@@ -26,11 +26,12 @@ export default function PropertyCard({
       {/* Image */}
       <div className="relative aspect-[4/5] overflow-hidden">
         <Image
-          fill
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+            fill
+            src={image || '/nayan31.webp'}
+            alt={title}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
 
         {/* Status Badge */}
         {status && (

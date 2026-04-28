@@ -11,7 +11,7 @@ type visions = {
 };
 
 const LargeBanner = () => {
-  const image3 = '/image3.jpeg';
+  const image3 = '/image3.webp';
 
   const t = useTranslations('aboutPage');
   const data = t.raw('vision');

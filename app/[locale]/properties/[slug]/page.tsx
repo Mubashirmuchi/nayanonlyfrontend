@@ -38,7 +38,7 @@ export default async function PropertyDetail({ params }: Params) {
             <div className="grid md:grid-cols-3 gap-6 mb-16">
               <div className="relative md:col-span-2 h-[450px]">
                 <Image
-                  src={property.image}
+                  src={property.image || '/nayan31.webp'}
                   alt={property.title[currentLocale]}
                   fill
                   className="object-cover rounded-lg"
@@ -48,7 +48,7 @@ export default async function PropertyDetail({ params }: Params) {
               <div className="grid gap-6">
                 <div className="relative h-[215px]">
                   <Image
-                    src={property.image}
+                    src={property.image || '/nayan31.webp'}
                     alt=""
                     fill
                     className="object-cover rounded-lg"
@@ -56,7 +56,7 @@ export default async function PropertyDetail({ params }: Params) {
                 </div>
                 <div className="relative h-[215px]">
                   <Image
-                    src={property.image}
+                    src={property.image || '/nayan31.webp'}
                     alt=""
                     fill
                     className="object-cover rounded-lg"
@@ -73,7 +73,7 @@ export default async function PropertyDetail({ params }: Params) {
                 </h1>
 
                 <p className="text-gray-500 mb-4">
-                  {property.location[currentLocale]}
+                  {property.location?.[currentLocale]}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
@@ -198,7 +198,7 @@ export default async function PropertyDetail({ params }: Params) {
 
               <div className="relative h-[400px]">
                 <Image
-                  src={property.image}
+                  src={property.image || '/nayan31.webp'}
                   alt=""
                   fill
                   className="object-cover rounded-lg"

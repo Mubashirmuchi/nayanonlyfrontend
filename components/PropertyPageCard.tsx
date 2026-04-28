@@ -29,7 +29,7 @@ const PropertyPageCard = ({ property, locale }: Props) => {
         {/* Image */}
         <div className="relative h-64 overflow-hidden">
           <Image
-            src={property.image}
+            src={property.image || '/nayan31.webp'}
             alt={property.title[locale]}
             fill
             className="object-cover  transition-transform duration-500 hover:scale-105"
@@ -55,7 +55,7 @@ const PropertyPageCard = ({ property, locale }: Props) => {
 
           {/* Location */}
           <p className="text-sm text-gray-500 mb-1">
-            {property.location[locale]}
+            {property.location?.[locale]}
           </p>
 
           {/* Description */}

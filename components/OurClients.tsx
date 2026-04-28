@@ -34,25 +34,18 @@ const OurClients = () => {
           <div className="bg-[#666766] aspect-square"></div>
 
           {/* Top Right Image */}
-          <div className="aspect-square overflow-hidden">
+          <div className="aspect-square overflow-hidden relative">
             <Image
-              width={500}
-              height={500}
               src="/frame.jpeg"
               alt="Interior"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
 
           {/* Bottom Large Image */}
-          <div className="col-span-2  aspect-video overflow-hidden">
-            <Image
-              width={500}
-              height={500}
-              src="/frame.png"
-              alt="Building"
-              className="w-full h-full object-cover"
-            />
+          <div className="col-span-2 aspect-video overflow-hidden relative">
+            <Image src="/frame.jpeg" alt="Building" fill className="" />
           </div>
         </div>
       </div>

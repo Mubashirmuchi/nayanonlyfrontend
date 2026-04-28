@@ -284,14 +284,15 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = ({ isVisible }: { isVisible?: boolean }) => {
-  const [logo, setLogoLoaded] = useState('/logoblack.png');
-  useEffect(() => {
-    if (isVisible) {
-      setLogoLoaded('/logoblack.png');
-    } else {
-      setLogoLoaded('/logowhite.png');
-    }
-  }, [isVisible]);
+  // const [logo, setLogoLoaded] = useState('/logoblack.webp');
+  const logo = isVisible ? '/logoblack.webp' : '/logowhite.webp';
+  // useEffect(() => {
+  //   if (isVisible) {
+  //     setLogoLoaded('/logoblack.webp');
+  //   } else {
+  //     setLogoLoaded('/logowhite.webp');
+  //   }
+  // }, [isVisible]);
   return (
     <Link
       href="/"

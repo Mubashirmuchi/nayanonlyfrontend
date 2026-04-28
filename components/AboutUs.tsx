@@ -10,9 +10,9 @@ const AboutUs = () => {
   const t = useTranslations('aboutPage');
   const data = t.raw('counts');
 
-  const image1 = '/heroimage.png';
-  const image2 = '/heroimage.png';
-  const image3 = '/heroimage.png';
+  const image1 = '/heroimage.webp';
+  const image2 = '/heroimage.webp';
+  const image3 = '/heroimage.webp';
   return (
     <section className=" py-20">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">

@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 const ConnectUs = () => {
   const t = useTranslations('homePage.connect');
 
-  const imgUrl = '/footersection.png';
+  const imgUrl = '/footersection.webp';
 
   return (
     <section className="w-full bg-[#EDE9E4] py-12 lg:py-20 px-4 md:px-8 lg:px-12">

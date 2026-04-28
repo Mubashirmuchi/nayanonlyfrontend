@@ -6,7 +6,7 @@ const PropertiesHeader = () => {
   return (
     <section className="relative h-105 flex items-center justify-center text-white py-20 pt-32 px-6">
       <Image
-        src="/frame.jpeg"
+        src="/frame.webp"
         alt="Developments"
         fill
         className="object-cover object-top"

@@ -141,7 +141,7 @@ const FeaturedProjects = ({
                     image={property.image}
                     title={property.title[locale as 'en' | 'ar']}
                     features={property.description[locale as 'en' | 'ar']}
-                    location={property.location[locale as 'en' | 'ar']}
+                    location={property.location?.[locale as 'en' | 'ar']}
                     status={property.status[locale as 'en' | 'ar']}
                     area={property.area}
                   />
