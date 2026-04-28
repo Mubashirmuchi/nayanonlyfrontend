@@ -1,4 +1,25 @@
-export const properties1 = [
+type LocalizedField = { en: string; ar: string };
+
+export type Property = {
+  id: number;
+  slug: string;
+  title: LocalizedField;
+  status: LocalizedField;
+  description: LocalizedField;
+  category: string;
+  area: string;
+  location?: LocalizedField;
+  coordinates?: { lat: number; lng: number };
+  gallery?: string[];
+  overview?: { en: string[]; ar: string[] };
+  specifications?: Record<string, unknown>;
+  amenities?: { en: string[]; ar: string[] };
+  investmentInfo?: LocalizedField;
+  developer?: string;
+  image?: string;
+};
+
+export const properties1: Property[] = [
   {
     id: 1,
     slug: 'almalqa-center',

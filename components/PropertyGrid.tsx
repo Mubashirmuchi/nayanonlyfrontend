@@ -6,22 +6,7 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { useLocale, useTranslations } from 'next-intl';
 import PropertyPageCard from './PropertyPageCard';
-type LocalizedField = {
-  en: string;
-  ar: string;
-};
-
-type Property = {
-  id: number;
-  slug: string;
-  title: LocalizedField;
-  location: LocalizedField;
-  status: LocalizedField;
-  description: LocalizedField;
-  image: string;
-  area: string;
-  category: string;
-};
+import { type Property } from '@/data/properties';
 
 type FilterType = {
   title: string;

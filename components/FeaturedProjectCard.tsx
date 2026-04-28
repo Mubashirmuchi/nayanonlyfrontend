@@ -6,8 +6,8 @@ interface PropertyCardProps {
   title: string;
   area: string;
   features: string;
-  location: string;
-  image: string;
+  location?: string;
+  image?: string;
   status?: string;
   href?: string;
 }

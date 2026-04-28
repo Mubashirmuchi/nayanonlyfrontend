@@ -1,21 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-type LocalizedField = {
-  en: string;
-  ar: string;
-};
-
-type Property = {
-  id: number;
-  slug: string;
-  title: LocalizedField;
-  description: LocalizedField;
-  location: LocalizedField;
-  status: LocalizedField;
-  area: string;
-  image: string;
-};
+import { type Property } from '@/data/properties';
 
 type Props = {
   property: Property;

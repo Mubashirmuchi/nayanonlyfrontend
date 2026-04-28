@@ -2,7 +2,9 @@ import { Resend } from 'resend';
 import fs from 'fs';
 import path from 'path';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = 'force-dynamic';
+
+const resend = new Resend(process.env.RESEND_API_KEY ?? 're_placeholder');
 
 const LOGO_URL = 'https://i.postimg.cc/JzSBCw3g/logowhite.png';
 

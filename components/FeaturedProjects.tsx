@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import PropertyCard from './FeaturedProjectCard';
 import { useState } from 'react';
+import { type Property } from '@/data/properties';
 
 import {
   Select,
@@ -14,22 +15,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-type LocalizedField = {
-  en: string;
-  ar: string;
-};
-
-type Property = {
-  id: number;
-  slug: string;
-  title: LocalizedField;
-  location: LocalizedField;
-  status: LocalizedField;
-  description: LocalizedField;
-  image: string;
-  area: string;
-  category: string;
-};
 
 type FeaturedProjectsProps = {
   properties: Property[];
