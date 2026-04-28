@@ -30,7 +30,7 @@ export default function ContactForm({ isArabic, propertyTitle }: Props) {
 
     const encoded = encodeURIComponent(text);
     // Replace with your WhatsApp number (include country code, no + or spaces)
-    const phone = '+919497435624';
+    const phone = '+966561291512';
     window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
   };
 
