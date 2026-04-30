@@ -93,7 +93,7 @@ export default function TestimonialsSwiper() {
           </h2>
         </div>
 
-        <div className="mt-8 max-w-6xl mx-auto">
+        <div className="mt-8 max-w-6xl mx-auto ">
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={30}
