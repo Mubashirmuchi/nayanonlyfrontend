@@ -351,7 +351,7 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
-    image: '/nayan29.jpg',
+    image: '/nayan29.JPG',
   },
 
   {
