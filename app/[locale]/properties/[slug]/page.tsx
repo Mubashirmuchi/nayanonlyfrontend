@@ -21,11 +21,13 @@ export default async function PropertyDetail({ params }: Params) {
   const isArabic = currentLocale === 'ar';
 
   // Build your image array — replace with real images from property data
-  const images = [
-    property.image || '/nayan31.webp',
-    property.image || '/nayan31.webp',
-    property.image || '/nayan31.webp',
+  const images = property.gallery || [
+    '/nayan20.jpg',
+    '/image3.webp',
+    '/image3.webp',
   ];
+
+  console.log('images', images);
 
   return (
     <PageWrapper>

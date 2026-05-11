@@ -32,7 +32,11 @@ export const properties1: Property[] = [
       ar: 'الرياض، المملكة العربية السعودية',
     },
     coordinates: { lat: 24.774265, lng: 46.738586 },
-    gallery: ['/image3.webp', '/image3.webp', '/image3.webp'],
+    gallery: [
+      '/DJI_20250917172433_0056_D.JPG',
+      '/DJI_20250917173941_0065_D.JPG',
+      '/DJI_20250917172433_0056_D.JPG',
+    ],
     description: {
       en: 'Modern commercial center offering premium office and showroom spaces in a strategic location.',
       ar: 'مركز تجاري حديث يوفر مساحات مكتبية ومعارض بمواصفات عالية في موقع استراتيجي.',
@@ -180,7 +184,7 @@ export const properties1: Property[] = [
   {
     id: 5,
     slug: 'nayan-20',
-    title: { en: 'Nayan 20', ar: 'نيــــان ٢٠' },
+    title: { en: 'Nayan 20', ar: 'نيــــان 20' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '350-137 m²',
@@ -192,12 +196,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    gallery: ['/nayan20.jpg', '/image3.webp', '/image3.webp'],
+    image: '/nayan20.jpg',
   },
 
   {
     id: 6,
     slug: 'nayan-21',
-    title: { en: 'Nayan 21', ar: 'نيــــان ٢١' },
+    title: { en: 'Nayan 21', ar: 'نيــــان 21' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '350-137 m²',
@@ -209,12 +215,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    gallery: ['/nayan21.jpg', '/nayaan21.jpeg', '/nayan21.jpg'],
+    image: '/nayan21.jpg',
   },
 
   {
     id: 7,
     slug: 'nayan-townhouse-22',
-    title: { en: 'Nayan Town House 22', ar: 'نيــــان تاون هاوس ٢٢' },
+    title: { en: 'Nayan Town House 22', ar: 'نيــــان تاون هاوس 22' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Townhouse',
     area: '350-190 m²',
@@ -226,12 +234,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan22.jpg',
+    gallery: ['/nayan22.jpg', '/nayan22.jpg', '/contactpage_n284nq.webp'],
   },
 
   {
     id: 8,
     slug: 'nayan-23',
-    title: { en: 'Nayan 23', ar: 'نيــــان ٢٣' },
+    title: { en: 'Nayan 23', ar: 'نيــــان 23' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '350-200 m²',
@@ -241,12 +251,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan23.jpg',
+    gallery: ['/aboutnayan_msfwqt.webp', '/testimonial2.jpg', '/nayan23.jpg'],
   },
 
   {
     id: 9,
     slug: 'nayan-24',
-    title: { en: 'Nayan 24', ar: 'نيــــان ٢٤' },
+    title: { en: 'Nayan 24', ar: 'نيــــان 24' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '350-190 m²',
@@ -256,12 +268,13 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan24.jpg',
   },
 
   {
     id: 10,
     slug: 'nayan-25',
-    title: { en: 'Nayan 25', ar: 'نيــــان ٢٥' },
+    title: { en: 'Nayan 25', ar: 'نيــــان 25' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '350-190 m²',
@@ -271,12 +284,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan25.jpg',
+    gallery: ['/nayan25.jpg', '/nayan25.jpg', '/nayan25.jpg'],
   },
 
   {
     id: 11,
     slug: 'nayan-26',
-    title: { en: 'Nayan 26', ar: 'نيــــان ٢٦' },
+    title: { en: 'Nayan 26', ar: 'نيــــان 26' },
     status: { en: 'For Rent', ar: 'للإيجار' },
     category: 'Residential',
     area: '94-90 m²',
@@ -286,12 +301,13 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan26.jpg',
   },
 
   {
     id: 12,
     slug: 'nayan-27',
-    title: { en: 'Nayan 27', ar: 'نيــــان ٢٧' },
+    title: { en: 'Nayan 27', ar: 'نيــــان 27' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '450-163 m²',
@@ -301,12 +317,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan27.jpg',
+    gallery: ['/aboutnayan_msfwqt.webp', '/testimonial2.jpg', '/nayan23.jpg'],
   },
 
   {
     id: 13,
     slug: 'nayan-28',
-    title: { en: 'Nayan 28', ar: 'نيــــان ٢٨' },
+    title: { en: 'Nayan 28', ar: 'نيــــان 28' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '619-247 m²',
@@ -316,12 +334,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan28.jpg',
+    gallery: ['/nayan22.jpg', '/nayan22.jpg', '/contactpage_n284nq.webp'],
   },
 
   {
     id: 14,
     slug: 'nayan-29',
-    title: { en: 'Nayan 29', ar: 'نيــــان ٢٩' },
+    title: { en: 'Nayan 29', ar: 'نيــــان 29' },
     status: { en: 'For Rent', ar: 'للإيجار' },
     category: 'Residential',
     area: '350-137 m²',
@@ -331,12 +351,13 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan29.jpg',
   },
 
   {
     id: 15,
     slug: 'nayan-30',
-    title: { en: 'Nayan 30', ar: 'نيــــان ٣٠' },
+    title: { en: 'Nayan 30', ar: 'نيــــان 30' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '375-191 m²',
@@ -346,12 +367,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan30.jpg',
+    gallery: ['/nayan30.jpg', '/nayan30.jpg', '/nayan30.jpg'],
   },
 
   {
     id: 16,
     slug: 'nayan-31',
-    title: { en: 'Nayan 31', ar: 'نيــــان ٣١' },
+    title: { en: 'Nayan 31', ar: 'نيــــان 31' },
     status: { en: 'Completed', ar: 'مكتمل' },
     category: 'Residential',
     area: '375-191 m²',
@@ -361,12 +384,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan31.png',
+    gallery: ['/nayan31.jpeg', '/nayan32n.webp'],
   },
 
   {
     id: 17,
     slug: 'nayan-32',
-    title: { en: 'Nayan 32', ar: 'نيــــان ٣٢' },
+    title: { en: 'Nayan 32', ar: 'نيــــان 32' },
     status: { en: 'Under Construction', ar: 'قيد الإنشاء' },
     category: 'Building',
     area: '160-130 m²',
@@ -376,12 +401,14 @@ export const properties1: Property[] = [
       en: 'Modern residential development by NAYAN.',
       ar: 'مشروع سكني حديث من نيــــان.',
     },
+    image: '/nayan32.png',
+    gallery: ['/nayan32.png', '/nayan32n.webp'],
   },
 
   {
     id: 18,
     slug: 'nayan-33-apartments',
-    title: { en: 'Nayan 33 Apartments', ar: 'نيــــان ٣٣ شقق' },
+    title: { en: 'Nayan 33 Apartments', ar: ' نيــــان  شقق 33' },
     status: { en: 'Under Construction', ar: 'قيد الإنشاء' },
     category: 'Apartments',
     area: '95-80 m²',
@@ -396,7 +423,7 @@ export const properties1: Property[] = [
   {
     id: 19,
     slug: 'nayan-33-commercial',
-    title: { en: 'Nayan 33 Commercial', ar: 'نيــــان ٣٣ تجاري' },
+    title: { en: 'Nayan 33 Commercial', ar: ' نيــــان  تجاري 33' },
     status: { en: 'Under Construction', ar: 'قيد الإنشاء' },
     category: 'Commercial',
     area: '18041.610 m²',
@@ -411,7 +438,7 @@ export const properties1: Property[] = [
   {
     id: 3,
     slug: 'nayan-32',
-    title: { en: 'Nayan 32', ar: 'نيــــان ٣٢' },
+    title: { en: 'Nayan 32', ar: 'نيــــان 33' },
     status: { en: 'For Sale', ar: 'للبيع' },
     category: 'Flat',
     area: '1200 m²',
@@ -447,7 +474,7 @@ export const properties1: Property[] = [
   {
     id: 4,
     slug: 'nayan-32',
-    title: { en: 'Nayan 32', ar: 'نيــــان ٣٢' },
+    title: { en: 'Nayan 32', ar: 'نيــــان 32' },
     status: { en: 'For Sale', ar: 'للبيع' },
     category: 'Flat',
     area: '1200 m²',
@@ -458,6 +485,7 @@ export const properties1: Property[] = [
       en: 'Contemporary duplex flats with spacious layouts.',
       ar: 'منازل دوبلكس عصرية بتصاميم واسعة.',
     },
+
     overview: {
       en: ['Spacious', 'Modern architecture'],
       ar: ['مساحات واسعة', 'تصميم معماري عصري'],
@@ -478,7 +506,7 @@ export const properties1: Property[] = [
       ar: 'مثالي للعائلات.',
     },
     developer: 'NAYAN Real Estate',
-    image: '/nayan31.webp',
+    image: '/nayan32.png',
   },
 ];
 
