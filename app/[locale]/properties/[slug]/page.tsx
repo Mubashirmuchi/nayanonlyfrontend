@@ -6,6 +6,13 @@ import { PageWrapper } from '@/components/PageWrapper';
 import PropertyGallery from '@/components/PropertyGallery';
 import ContactForm from '@/components/ContactFormInDetail';
 
+export async function generateStaticParams() {
+  const locales = ['en', 'ar'];
+  return properties1.flatMap((property) =>
+    locales.map((locale) => ({ locale, slug: property.slug }))
+  );
+}
+
 type Params = {
   params: {
     slug: string;

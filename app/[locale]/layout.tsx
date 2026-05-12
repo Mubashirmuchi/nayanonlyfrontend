@@ -30,6 +30,10 @@ const cairo = Cairo({
   subsets: ['arabic'],
 });
 
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'ar' }];
+}
+
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
