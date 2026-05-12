@@ -34,8 +34,6 @@ export default async function PropertyDetail({ params }: Params) {
     '/image3.webp',
   ];
 
-  console.log('images', images);
-
   return (
     <PageWrapper>
       <main dir={isArabic ? 'rtl' : 'ltr'}>
