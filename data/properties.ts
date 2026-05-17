@@ -435,42 +435,7 @@ export const properties1: Property[] = [
     },
   },
 
-  {
-    id: 3,
-    slug: 'nayan-32',
-    title: { en: 'Nayan 32', ar: 'نيــــان 33' },
-    status: { en: 'For Sale', ar: 'للبيع' },
-    category: 'Flat',
-    area: '1200 m²',
-    location: { en: 'Al Araid, Riyadh', ar: 'النرجس' },
-    coordinates: { lat: 24.82, lng: 46.68 },
-    gallery: ['/nayan31.jpeg', '/nayan32n.webp'],
-    description: {
-      en: 'Contemporary duplex flats with spacious layouts.',
-      ar: 'منازل دوبلكس عصرية بتصاميم واسعة.',
-    },
-    overview: {
-      en: ['Spacious', 'Modern architecture'],
-      ar: ['مساحات واسعة', 'تصميم معماري عصري'],
-    },
-    specifications: {
-      //
-      propertyType: { en: 'Flat', ar: 'فيلا دوبلكس' },
-      totalUnits: '20 Units',
-      parkingSpaces: 40,
-      completionYear: 2024,
-    },
-    amenities: {
-      en: ['Private Garden', 'Parking', 'Security'],
-      ar: ['حديقة خاصة', 'مواقف', 'أمن'],
-    },
-    investmentInfo: {
-      en: 'Perfect for families.',
-      ar: 'مثالي للعائلات.',
-    },
-    developer: 'NAYAN Real Estate',
-    image: '/nayan31.webp',
-  },
+
   {
     id: 4,
     slug: 'nayan-32',
