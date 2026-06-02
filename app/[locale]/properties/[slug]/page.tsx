@@ -7,6 +7,8 @@ import PropertyGallery from '@/components/PropertyGallery';
 import ContactForm from '@/components/ContactFormInDetail';
 import type { Metadata } from 'next';
 
+const siteUrl = 'https://nayan.sa';
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug, locale } = await params;
   const property = properties1.find((item) => item.slug === slug);
@@ -15,7 +17,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const l = locale as 'en' | 'ar';
   const title = property.title[l];
   const description = property.description[l];
-  const image = property.image || (property.gallery?.[0] ?? '/nayan20.jpg');
+  const rawImage = property.image || (property.gallery?.[0] ?? '/nayan20.jpg');
+  const image = rawImage.startsWith('http')
+    ? rawImage
+    : `${siteUrl}${rawImage}`;
 
   return {
     title,
@@ -23,7 +28,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      images: [{ url: image }],
+      images: [{ url: image, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
