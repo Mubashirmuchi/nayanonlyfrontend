@@ -5,30 +5,22 @@ import { NavbarComponent } from '@/components/Navbar';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Cairo } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 import AnimatePresence from '@/components/AnimatePresence';
 import { OrganizationJsonLd } from '@/components/SeoJsonLd';
 import { cn } from '@/lib/utils';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import '../globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
-
-import { Cairo } from 'next/font/google';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
-
-const cairo = Cairo({
-  variable: '--font-arabic',
-  subsets: ['arabic'],
-});
+const cairo = Cairo({ variable: '--font-arabic', subsets: ['arabic'] });
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ar' }];
@@ -47,8 +39,6 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   const messages = await getMessages();
-
-  // RTL detection
   const isRTL = locale === 'ar';
 
   return (
@@ -61,8 +51,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           'antialiased'
         )}
       >
+        <GoogleTagManager gtmId="AW-10949548440" />
         <OrganizationJsonLd locale={locale} />
-
         <NextIntlClientProvider messages={messages}>
           <AnimatePresence itemKey={locale}>
             <NavbarComponent locale={locale} />
@@ -71,7 +61,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <WhatsAppButton />
           </AnimatePresence>
         </NextIntlClientProvider>
-         <SpeedInsights />
+        <SpeedInsights />
       </body>
     </html>
   );

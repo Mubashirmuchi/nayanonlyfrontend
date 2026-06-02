@@ -5,6 +5,34 @@ import Image from 'next/image';
 import { PageWrapper } from '@/components/PageWrapper';
 import PropertyGallery from '@/components/PropertyGallery';
 import ContactForm from '@/components/ContactFormInDetail';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const property = properties1.find((item) => item.slug === slug);
+  if (!property) return {};
+
+  const l = locale as 'en' | 'ar';
+  const title = property.title[l];
+  const description = property.description[l];
+  const image = property.image || (property.gallery?.[0] ?? '/nayan20.jpg');
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [{ url: image }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const locales = ['en', 'ar'];

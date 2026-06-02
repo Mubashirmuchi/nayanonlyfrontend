@@ -7,7 +7,7 @@ import OurClients from '@/components/OurClients';
 import { PageWrapper } from '@/components/PageWrapper';
 import ServicesBlock from '@/components/Services';
 import TestimonialsSwiper from '@/components/Testimonials';
-import RealEstateSection from '@/components/TrustedSecton';
+// import RealEstateSection from '@/components/TrustedSecton';
 import WhyChooseUS from '@/components/WhyChooseUs';
 import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
@@ -19,11 +19,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const isArabic = locale === 'ar';
 
   const title = isArabic
-    ? 'نايان | عقارات فاخرة في المملكة العربية السعودية'
+    ? 'نيــــان | عقارات فاخرة في المملكة العربية السعودية'
     : 'Nayan | Luxury Real Estate in Saudi Arabia';
 
   const description = isArabic
-    ? 'اكتشف مشاريع عقارية راقية مصممة للحياة العصرية. استثمر مع نايان في أفضل العقارات في المملكة العربية السعودية.'
+    ? 'اكتشف مشاريع عقارية راقية مصممة للحياة العصرية. استثمر مع نيــــان في أفضل العقارات في المملكة العربية السعودية.'
     : 'Discover timeless developments crafted for refined modern living. Explore Nayan’s premium real estate projects and investment opportunities in Saudi Arabia.';
 
   const url = `https://nayan.sa/${locale}`;
@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     keywords: isArabic
       ? [
-          'نايان',
+          'نيــــان',
           'عقارات السعودية',
           'عقارات فاخرة',
           'عقارات الرياض',

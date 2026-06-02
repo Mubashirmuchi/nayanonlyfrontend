@@ -375,7 +375,7 @@ export const properties1: Property[] = [
     id: 16,
     slug: 'nayan-31',
     title: { en: 'Nayan 31', ar: 'نيــــان 31' },
-    status: { en: 'Completed', ar: 'مكتمل' },
+    status: { en: 'For Sale', ar: 'للبيع ' },
     category: 'Residential',
     area: '375-191 m²',
     specifications: { totalUnits: '60 Units' },
@@ -434,7 +434,6 @@ export const properties1: Property[] = [
       ar: 'مشروع سكني حديث من نيــــان.',
     },
   },
-
 
   {
     id: 4,
